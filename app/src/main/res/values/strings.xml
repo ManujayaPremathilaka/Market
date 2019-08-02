@@ -3,8 +3,7 @@
     <string name="Market">Market</string>
     <string name="UserName">User Name</string>
     <string name="Password">Password</string>
-    <string name="NotAMemberQuestion">Not a Member?</string>
-    <string name="RegistrationButton">Not a Member?</string>
+    <string name="NotAMemberQuestion"><u>Not a Member?</u></string>
     <string name="LoginButton">Login</string>
     <string name="FirstName">First Name:</string>
     <string name="LastName">Last Name:</string>

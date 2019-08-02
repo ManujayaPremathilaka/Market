@@ -16,22 +16,24 @@ public class MarketHome extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
 
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent register = new Intent(MarketHome.this, CustomerRegistration.class);
                 startActivity(register);
             }
+
         });
     }
 
-    public void pushRegisterButton(View view){
-          Intent register = new Intent(MarketHome.this, CustomerRegistration.class);
-          startActivity(register);
+    public void onLoginButtonPushed(View view){
+        Intent login = new Intent(MarketHome.this, ItemMenu.class);
+        startActivity(login);
     }
 
-    public void pushLoginButton(View view){
-        Intent login = new Intent(MarketHome.this,ItemMenu.class);
-        startActivity(login);
+    public void onRegisterButtonPushed(View view){
+        Intent register = new Intent(MarketHome.this, CustomerRegistration.class);
+        startActivity(register);
     }
 }

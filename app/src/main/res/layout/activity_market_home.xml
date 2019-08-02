@@ -15,7 +15,7 @@
         android:layout_marginTop="48dp"
         android:text="@string/Market"
         android:textSize="24dp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,18 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="116dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="76dp"
-        android:onClick="pushLoginButton"
-        android:text="@string/LoginButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -57,7 +45,7 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="84dp"
         android:layout_marginStart="84dp"
@@ -70,14 +58,14 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="227dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="128dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="32dp"
-        android:onClick="pushRegisterButton"
-        android:text="Button"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="104dp"
+        android:onClick="onLoginButtonPushed"
+        android:text="@string/LoginButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </android.support.constraint.ConstraintLayout>
