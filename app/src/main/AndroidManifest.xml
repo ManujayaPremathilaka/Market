@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomerRegistration" />
-        <activity android:name=".ItemMenu"></activity>
+        <activity android:name=".CustomerRegistration"/>
+        <activity android:name=".ItemMenu" />
+        <activity android:name=".Cart"></activity>
     </application>
 
 </manifest>

@@ -20,65 +20,64 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="84dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="@string/UserName"
-        android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInHome" />
-
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="84dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="@string/UserName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInHome" />
-
-    <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="84dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="0dp"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="76dp"
         android:onClick="pushLoginButton"
         android:text="@string/LoginButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="84dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="24dp"
-        android:onClick="pushRegisterButton"
+        android:layout_marginTop="28dp"
         android:text="@string/NotAMemberQuestion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="@string/UserName"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInHome" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="32dp"
+        android:onClick="pushRegisterButton"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
 </android.support.constraint.ConstraintLayout>

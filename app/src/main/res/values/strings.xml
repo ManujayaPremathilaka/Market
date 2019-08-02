@@ -13,4 +13,6 @@
     <string name="email">E-mail:</string>
     <string name="ReEnter">Re-Enter:</string>
     <string name="RegisterMeButton">Register Me</string>
+    <string name="Amount">Amount</string>
+    <string name="AddToCart">Add to Cart</string>
 </resources>
