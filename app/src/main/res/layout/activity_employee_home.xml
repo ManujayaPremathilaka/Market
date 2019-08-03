@@ -40,6 +40,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="100dp"
+            android:onClick="onDeliveryButtonPushed"
             android:text="@string/Delivery" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
