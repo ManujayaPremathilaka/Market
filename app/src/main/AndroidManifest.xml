@@ -18,8 +18,8 @@
         </activity>
         <activity android:name=".CustomerRegistration" />
         <activity android:name=".ItemMenu" />
-        <activity android:name=".Cart" />
-        <activity android:name=".EmployeeHome"></activity>
+        <activity android:name=".EmployeeHome" />
+        <activity android:name=".Cart"></activity>
     </application>
 
 </manifest>
