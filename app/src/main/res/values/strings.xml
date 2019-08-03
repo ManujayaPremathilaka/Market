@@ -14,4 +14,10 @@
     <string name="RegisterMeButton">Register Me</string>
     <string name="Amount">Amount</string>
     <string name="AddToCart">Add to Cart</string>
+    <string name="EditButton">Edit</string>
+    <string name="RemoveButton">Remove</string>
+    <string name="OrderListButton">Order List</string>
+    <string name="Admin">Admin</string>
+    <string name="Delivery">Delivery</string>
+    <string name="Worker">Worker</string>
 </resources>

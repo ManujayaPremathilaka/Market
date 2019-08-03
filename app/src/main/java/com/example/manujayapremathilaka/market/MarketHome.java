@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MarketHome extends AppCompatActivity {
 
     TextView textView;
+    EditText userName;
+    EditText password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,17 @@ public class MarketHome extends AppCompatActivity {
     }
 
     public void onLoginButtonPushed(View view){
-        Intent login = new Intent(MarketHome.this, ItemMenu.class);
-        startActivity(login);
+        userName = findViewById(R.id.userName);
+        password = findViewById(R.id.password);
+
+        if(((userName.getText().toString()).equalsIgnoreCase("admin")) && ((password.getText().toString()).equalsIgnoreCase("admin"))){
+            Intent adminLogin = new Intent(MarketHome.this, EmployeeHome.class);
+            startActivity(adminLogin);
+        }
+        else{
+            Intent login = new Intent(MarketHome.this, ItemMenu.class);
+            startActivity(login);
+        }
     }
 
     public void onRegisterButtonPushed(View view){
