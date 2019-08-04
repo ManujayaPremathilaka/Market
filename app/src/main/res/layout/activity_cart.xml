@@ -7,13 +7,31 @@
     android:background="@drawable/appbackgroundincustomerinterfaces"
     tools:context=".Cart">
 
+    <ImageButton
+        android:id="@+id/cart3"
+        android:layout_width="56dp"
+        android:layout_height="52dp"
+        android:onClick="onCartButtonPushed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shoppingcart" />
+
+    <ImageButton
+        android:id="@+id/home3"
+        android:layout_width="56dp"
+        android:layout_height="52dp"
+        android:onClick="onHomeButtonPush"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="75dp"
         android:text="Pumpkin"
         android:textColor="@color/black"
         android:textSize="18dp"
