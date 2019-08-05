@@ -13,8 +13,13 @@ public class getOrder extends AppCompatActivity {
         setContentView(R.layout.activity_get_order);
     }
 
-    public void AdminHomeLog(View view){
+    public void LoadProfile(View view){
         Intent loadprofile = new Intent(getOrder.this, profile.class);
         startActivity(loadprofile);
+    }
+
+    public void LoadViewAddress(View view){
+        Intent loadViewAddress = new Intent(getOrder.this, getAddress.class);
+        startActivity(loadViewAddress);
     }
 }
