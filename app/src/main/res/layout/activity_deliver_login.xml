@@ -94,6 +94,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/mybutton"
+        android:onClick="GetOrder"
         android:text="Sign In" />
 
 

@@ -19,7 +19,7 @@ public class SignUpHome extends AppCompatActivity {
     }
 
     public void LoardLogin(View view){
-        Intent loardlogin = new Intent(SignUpHome.this, OrderList.class);
+        Intent loardlogin = new Intent(SignUpHome.this, deliverLogin.class);
         startActivity(loardlogin);
     }
 }

@@ -143,12 +143,13 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:background="@drawable/mybutton1"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_below="@+id/et_name4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+        android:background="@drawable/mybutton1"
+        android:onClick="ReloadGetOrder"
         android:text="Delivered" />
 
 </RelativeLayout>
