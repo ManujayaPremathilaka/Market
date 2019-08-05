@@ -42,14 +42,13 @@
             android:id="@+id/button5"
             android:layout_width="141dp"
             android:layout_height="150dp"
+            android:onClick="Admindash"
             android:text="Login"
-            android:textColor="@color/sub_btn_line"
             android:textSize="15sp"
-            app:sub_btn_background="@color/DarkBlue"
-            app:sub_btn_duration="3000"
-            app:sub_btn_line_color="@color/sub_btn_line"
-            app:sub_btn_ripple_color="@color/sub_btn_line"
-            app:sub_btn_tick_color="@color/white" />
+            android:textColor="@color/DarkBlue"
+            app:sub_btn_background="@color/sub_btn_line"
+            app:sub_btn_line_color="@color/white"/>
+
 
     </LinearLayout>
 

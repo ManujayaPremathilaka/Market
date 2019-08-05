@@ -18,7 +18,7 @@ public class EmployeeHome extends AppCompatActivity {
         startActivity(delivery);
     }
 
-    public void AdminHomeLog(View view){
+   public void AdminHomeLog(View view){
         Intent adminhome = new Intent(EmployeeHome.this, home.class);
         startActivity(adminhome);
     }
