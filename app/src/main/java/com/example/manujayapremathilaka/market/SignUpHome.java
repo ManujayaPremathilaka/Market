@@ -17,4 +17,9 @@ public class SignUpHome extends AppCompatActivity {
         Intent register = new Intent(SignUpHome.this, Register.class);
         startActivity(register);
     }
+
+    public void LoardLogin(View view){
+        Intent loardlogin = new Intent(SignUpHome.this, deliverLogin.class);
+        startActivity(loardlogin);
+    }
 }

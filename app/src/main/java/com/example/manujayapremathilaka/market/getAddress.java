@@ -5,20 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class EmployeeHome extends AppCompatActivity {
+public class getAddress extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_home);
+        setContentView(R.layout.activity_get_address);
     }
 
-    public void onDeliveryButtonPushed(View view){
-        Intent delivery = new Intent(EmployeeHome.this, SignUpHome.class);
-        startActivity(delivery);
+    public void ReloadGetOrder(View view){
+        Intent getOrder = new Intent(getAddress.this, getOrder.class);
+        startActivity(getOrder);
     }
-
-
-
-
 }
