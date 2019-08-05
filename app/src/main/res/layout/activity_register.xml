@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register"
-    android:background="@drawable/hola">
+    android:background="@drawable/finger">
 
    <!-- <include
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/dfghjk"
+        app:srcCompat="@drawable/download1"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="45dp" />
     <!-- name-->
@@ -33,7 +33,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -46,7 +46,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Name"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--email-->
     <EditText
@@ -60,7 +60,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email" />
+        android:hint="Email" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -73,7 +73,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Eamil"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--Contact-->
     <EditText
@@ -87,7 +87,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Contact No" />
+        android:hint="Contact No" />
 
     <TextView
         android:id="@+id/tv_contactno"
@@ -100,7 +100,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Contact No"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--Nic-->
     <EditText
@@ -114,7 +114,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="NIC No" />
+        android:hint="NIC No" />
 
     <TextView
         android:id="@+id/tv_nic"
@@ -127,7 +127,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="NIC No:"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--vehcal-->
     <EditText
@@ -141,7 +141,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Vehical No" />
+        android:hint="Vehical No" />
 
     <TextView
         android:id="@+id/tv_vehicalno"
@@ -154,7 +154,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Vehical No"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
 
     <!--password-->
@@ -169,7 +169,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Password" />
+        android:hint="Password" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -182,7 +182,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Password"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
 
     <!--re enter password-->
@@ -197,7 +197,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Re Enter Password" />
+        android:hint="Re Enter Password" />
 
     <TextView
         android:id="@+id/tv_repassword"
@@ -210,7 +210,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
         android:text="Re Enter Password"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
 
     <Button
