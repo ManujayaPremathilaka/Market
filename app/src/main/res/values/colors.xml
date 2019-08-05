@@ -9,4 +9,10 @@
 
     <color name="btnSignUp">#39796b</color>
     <color name="btnSingActive">#A9d440</color>
+
+    <color name="blue">#4c98bb</color>
+    <color name="DarkBlue">#303F9F</color>
+    <color name="pink">#FF4081</color>
+    <color name="whitee">#ffffff</color>
+    <color name="blackk">#232530</color>
 </resources>
