@@ -18,6 +18,10 @@ public class EmployeeHome extends AppCompatActivity {
         startActivity(delivery);
     }
 
+    public void TakeOrder(View view){
+        Intent TakeOrder = new Intent(EmployeeHome.this, TakeOrder.class);
+        startActivity(TakeOrder);
+    }
 
 
 
