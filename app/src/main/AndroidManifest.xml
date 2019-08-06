@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminLogin"></activity>
-        <activity android:name=".veg" />
-        <activity android:name=".DashBoard" />
+        <activity android:name=".deliverLogin"></activity>
+        <activity android:name=".getAddress" />
+        <activity android:name=".getOrder" />
+        <activity android:name=".profile" />
         <activity android:name=".home" />
         <activity android:name=".OrderList" />
         <activity android:name=".Register" />

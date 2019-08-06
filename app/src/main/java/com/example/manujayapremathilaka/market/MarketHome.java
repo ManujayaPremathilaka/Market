@@ -19,7 +19,7 @@ public class MarketHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_home);
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.register);
 
 
         textView.setOnClickListener(new View.OnClickListener() {

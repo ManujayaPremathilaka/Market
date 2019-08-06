@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/freepik_featured_delivery"
+    android:background="@drawable/gg"
     tools:context=".SignUpHome">
 
     <LinearLayout
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#32CD32"
-            android:onClick="Loadregister"
+            android:onClick="LoardLogin"
             android:text="SignIn"
             android:textColor="@android:color/white" />
 
