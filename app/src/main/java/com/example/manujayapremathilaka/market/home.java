@@ -1,5 +1,6 @@
 package com.example.manujayapremathilaka.market;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Bundle;
@@ -24,5 +25,11 @@ public class home extends AppCompatActivity {
             }
         });
     }
+    public void Admindash(View view){
+        Intent dash = new Intent(home.this, DashBoard.class);
+        startActivity(dash);
+    }
+
+    
     }
 

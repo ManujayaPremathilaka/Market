@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashBoard">
+
+    <LinearLayout
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textview1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin DashBoard"
+            android:textColor="#FFF"
+            android:textSize="40sp" />
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/menus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:background="@color/gray">
+
+                <ImageView
+                    android:id="@+id/imageview1"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/vegetables" />
+
+                <com.spark.submitbutton.SubmitButton
+                    android:id="@+id/button1"
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:onClick="veg"
+                    android:text="V"
+                    android:textColor="@color/DarkBlue"
+                    android:textSize="15sp"
+                    app:sub_btn_background="@color/sub_btn_line"
+                    app:sub_btn_line_color="@color/white"
+                    app:sub_btn_tick_color="@color/gray"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/gray">
+
+
+                <ImageView
+                    android:id="@+id/imageview2"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/harvest" />
+                <com.spark.submitbutton.SubmitButton
+                    android:id="@+id/button2"
+                    android:layout_width="15dp"
+                    android:layout_height="0dp"
+                    android:text="F"
+                    android:textSize="15sp"
+                    android:textColor="@color/DarkBlue"
+                    app:sub_btn_background="@color/sub_btn_line"
+                    app:sub_btn_line_color="@color/white"
+                    app:sub_btn_tick_color="@color/gray"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:background="@color/gray"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/imageview3"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/pepper" />
+                <com.spark.submitbutton.SubmitButton
+                    android:id="@+id/button3"
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:text="S"
+                    android:textSize="15sp"
+                    android:textColor="@color/DarkBlue"
+                    app:sub_btn_background="@color/sub_btn_line"
+                    app:sub_btn_line_color="@color/white"
+                    app:sub_btn_tick_color="@color/gray"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:background="@color/gray"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/imageview4"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/detergent" />
+                <com.spark.submitbutton.SubmitButton
+                    android:id="@+id/button4"
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:text="C"
+                    android:textSize="15sp"
+                    android:textColor="@color/DarkBlue"
+                    app:sub_btn_background="@color/sub_btn_line"
+                    app:sub_btn_line_color="@color/white"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bgapp"
+        android:layout_width="526dp"
+        android:layout_height="900dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bgapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
