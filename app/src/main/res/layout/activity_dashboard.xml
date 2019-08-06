@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Veg"
-    android:background="@drawable/vegbackg">
+    tools:context=".dashboard"
+    android:background="@drawable/adminbgback">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -16,7 +16,7 @@
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pumpkin" />
+        app:srcCompat="@drawable/vegetables" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -27,7 +27,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/carrot" />
+        app:srcCompat="@drawable/harvest" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,7 +38,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/broccoli" />
+        app:srcCompat="@drawable/fish" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -49,7 +49,7 @@
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/tomato" />
+        app:srcCompat="@drawable/steak" />
 
     <TextView
         android:id="@+id/textView18"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:text="Pumpkin/1Kg/Rs 100.00"
+        android:text="Vegetable"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:text="Brocoli/500g/Rs 150.00"
+        android:text="Fish"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -79,18 +79,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Carrot/1Kg/Rs 90.00"
+        android:text="Fruit"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="195dp"
-        android:layout_height="19dp"
+        android:layout_width="52dp"
+        android:layout_height="21dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Tomato/1Kg/Rs 80.00"
+        android:text="Meat"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -101,17 +101,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Update"
+        android:layout_marginBottom="80dp"
+        android:onClick="LaodVegPAge"
+        android:text="Vegitable"
         app:layout_constraintBottom_toTopOf="@+id/button18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/button18"
@@ -122,10 +120,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="76dp"
-        android:text="Update"
+        android:onClick="LaodVegPAge"
+        android:text="Fish"
         app:layout_constraintBottom_toTopOf="@+id/button19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toEndOf="@+id/imageView" />
 
     <Button
@@ -136,11 +135,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="84dp"
-        android:text="Update"
+        android:layout_marginBottom="80dp"
+        android:text="Fruits"
         app:layout_constraintBottom_toTopOf="@+id/button20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
     <Button
@@ -152,87 +151,28 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="100dp"
-        android:text="Update"
+        android:text="Meat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="166dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Vegetables"
-        android:textSize="30sp"
+        android:text="Admin Dash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
-    <Button
-        android:id="@+id/button22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/button23"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
-
-    <Button
-        android:id="@+id/button23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="76dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/button24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button18" />
-
-    <Button
-        android:id="@+id/button24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="84dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/button25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button19" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="100dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button20" />
+        app:layout_constraintVertical_bias="0.049"
+        android:textSize="30sp"/>
 
 
 </android.support.constraint.ConstraintLayout>

@@ -15,7 +15,7 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        SubmitButton sb = (SubmitButton) findViewById(R.id.button5);
+        SubmitButton sb = (SubmitButton) findViewById(R.id.button6);
         sb.setOnClickListener(new View.OnClickListener() {
             public static final String TAG = "onclick";
 
@@ -25,8 +25,8 @@ public class home extends AppCompatActivity {
             }
         });
     }
-    public void Admindash(View view){
-        Intent dash = new Intent(home.this, DashBoard.class);
+    public void Admindashlog(View view){
+        Intent dash = new Intent(home.this, dashboard.class);
         startActivity(dash);
     }
 

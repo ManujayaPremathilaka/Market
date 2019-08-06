@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FillOrder">
+    tools:context=".FillOrder"
+    android:background="@drawable/dashdash">
 
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#009688"
+        android:background="#2196F3"
         android:text="    Order Items"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

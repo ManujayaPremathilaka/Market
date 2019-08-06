@@ -18,6 +18,16 @@ public class EmployeeHome extends AppCompatActivity {
         startActivity(delivery);
     }
 
+    public void AdminHomeLog(View view){
+        Intent adminLogin = new Intent(EmployeeHome.this, home.class);
+        startActivity(adminLogin);
+    }
+
+    public void TakeOrder(View view){
+        Intent takeOrder = new Intent(EmployeeHome.this, TakeOrder.class);
+        startActivity(takeOrder);
+    }
+
 
 
 

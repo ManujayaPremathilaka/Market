@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrderSuccess"></activity>
+        <activity android:name=".Veg"></activity>
+        <activity android:name=".dashboard" />
+        <activity android:name=".OrderSuccess" />
         <activity android:name=".FillOrder" />
         <activity android:name=".TakeOrder" />
         <activity android:name=".deliverLogin" />

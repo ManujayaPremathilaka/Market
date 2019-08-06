@@ -5,17 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class DashBoard extends AppCompatActivity {
+public class dashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
-    }
-    public void veg(View view){
-        Intent veg = new Intent(DashBoard.this, veg.class);
-        startActivity(veg);
+        setContentView(R.layout.activity_dashboard);
     }
 
-
+    public void LaodVegPAge(View view){
+        Intent vegpage = new Intent(dashboard.this, Veg.class);
+        startActivity(vegpage);
+    }
 }

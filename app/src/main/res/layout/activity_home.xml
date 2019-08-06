@@ -31,23 +31,24 @@
 
         <TextView
             android:id="@+id/textview6"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hi! Have A Nice day"
             android:textColor="#FFF"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <com.spark.submitbutton.SubmitButton
-            android:id="@+id/button5"
-            android:layout_width="141dp"
-            android:layout_height="150dp"
-            android:onClick="Admindash"
-            android:text="Login"
-            android:textSize="15sp"
+            android:id="@+id/button6"
+            android:layout_width="5dp"
+            android:layout_height="0dp"
+            android:onClick="Admindashlog"
             android:textColor="@color/DarkBlue"
+            android:textSize="15sp"
             app:sub_btn_background="@color/sub_btn_line"
-            app:sub_btn_line_color="@color/white"/>
+            app:sub_btn_line_color="@color/white"
+            app:sub_btn_tick_color="@color/gray"
+            android:text="Validate"/>
 
 
     </LinearLayout>
@@ -62,6 +63,18 @@
         android:src="@drawable/bgapp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="540dp"
+        android:onClick="Admindashlog"
+        android:text="Log In here"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
