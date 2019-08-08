@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_login"
     android:layout_marginTop="0dp"
-    android:background="@drawable/gradient"
+    android:background="@color/white"
     tools:context=".MarketHome">
+
+    <FrameLayout
+        android:id="@+id/loginButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/login_button"
+        android:onClick="load"
+        android:clickable="true"
+        android:elevation="40dp"
+        android:foreground="?selectableItemBackground"
+        >
+
+        <TextView
+            android:id="@+id/loginButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LoginButton"
+            android:layout_gravity="center"
+            android:textColor="#ffffff" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/realView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:visibility="invisible"/>
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -18,14 +59,14 @@
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:background="#11000000"
-        android:ems="10"
         android:drawableLeft="@drawable/ic_action_user"
+        android:ems="10"
         android:hint="@string/UserName"
         android:inputType="textPersonName"
         android:textSize="16dp" />
@@ -36,27 +77,18 @@
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:ems="10"
         android:drawableLeft="@drawable/ic_action_pass"
+        android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
-
-        android:onClick="onLoginButtonPushed"
-        android:text="@string/LoginButton" />
 
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="525dp"
+        android:layout_marginTop="400dp"
         android:text="@string/NotAMemberQuestion" />
 
 </RelativeLayout>
+</layout>

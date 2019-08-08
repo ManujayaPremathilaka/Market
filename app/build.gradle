@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.manujayapremathilaka.market"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding{
+        enabled = true;
+    }
+
 }
 repositories {
     maven {
@@ -33,5 +37,6 @@ dependencies {
     implementation 'me.spark:submitbutton:1.0.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
 
-
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
 }
