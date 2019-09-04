@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +17,16 @@ import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.manujayapremathilaka.market.com.market.model.RegisteredCustomer;
 import com.example.manujayapremathilaka.market.databinding.ActivityMarketHomeBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MarketHome extends AppCompatActivity {
@@ -49,6 +58,7 @@ public class MarketHome extends AppCompatActivity {
         animateButtonWidth();
         fadeOutTextAndSetProgressDialog();
         nextAction();
+        //getUser();
     }
 
     private void animateButtonWidth(){
@@ -91,9 +101,10 @@ public class MarketHome extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                revealButton();
+                //revealButton();
                 fadeOutProgressDialog();
                 delayedStartNextActivity();
+                //getUser();
             }
         }, 2000);
     }
@@ -143,8 +154,7 @@ public class MarketHome extends AppCompatActivity {
 
                 }
                 else{
-                    Intent login = new Intent(MarketHome.this, ItemMenu.class);
-                    startActivity(login);
+                  getUser();
                 }
             }
         }, 100);
@@ -155,7 +165,7 @@ public class MarketHome extends AppCompatActivity {
         return (int) getResources().getDimension(R.dimen.get_width);
     }
 
-    public void onLoginButtonPushed(View view){
+    private void getUser(){
         userName = findViewById(R.id.userName);
         password = findViewById(R.id.password);
 
@@ -165,8 +175,32 @@ public class MarketHome extends AppCompatActivity {
 
         }
         else{
-            Intent login = new Intent(MarketHome.this, ItemMenu.class);
-            startActivity(login);
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            Query query = databaseReference.child("RegisteredCustomers").orderByChild("email").equalTo(userName.getText().toString());
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot d: dataSnapshot.getChildren()){
+                        RegisteredCustomer registeredCustomer = d.getValue(RegisteredCustomer.class);
+                            if (registeredCustomer.getPassword().equals(password.getText().toString())) {
+                                Intent login = new Intent(MarketHome.this, ItemMenu.class);
+                                startActivity(login);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
+                                Intent login = new Intent(MarketHome.this, MarketHome.class);
+                                startActivity(login);
+                            }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+
         }
 
     }

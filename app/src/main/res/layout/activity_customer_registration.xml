@@ -8,6 +8,19 @@
     tools:context=".CustomerRegistration">
 
     <TextView
+        android:id="@+id/textView41"
+        android:layout_width="74dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="31dp"
+        android:padding="2dp"
+        android:text="@string/ReEnter"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
@@ -39,18 +52,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txtNIC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView40"
+        app:layout_constraintStart_toEndOf="@+id/textView40" />
+
+    <EditText
+        android:id="@+id/txtFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="46dp"
@@ -64,14 +86,13 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="30dp"
         android:padding="2dp"
-        android:paddingBottom="2dp"
         android:paddingLeft="2dp"
-        android:paddingRight="2dp"
         android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp"
         android:text="@string/LastName"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -82,21 +103,20 @@
         android:id="@+id/textView9"
         android:layout_width="74dp"
         android:layout_height="23dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="31dp"
-        android:paddingBottom="2dp"
+        android:layout_marginTop="30dp"
         android:paddingLeft="2dp"
-        android:paddingRight="2dp"
         android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp"
         android:text="@string/MobileNo"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/txtMobileNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="46dp"
@@ -121,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/txtAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
@@ -146,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="47dp"
@@ -171,7 +191,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/txtPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="47dp"
@@ -195,8 +215,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="74dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:padding="2dp"
+        android:text="@string/nic"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
     <EditText
-        android:id="@+id/editText14"
+        android:id="@+id/txtRePwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="47dp"
@@ -207,7 +240,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRegisterMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="148dp"
@@ -216,6 +249,6 @@
         android:onClick="pushRegisterMeButton"
         android:text="@string/RegisterMeButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText14" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRePwd" />
 
 </android.support.constraint.ConstraintLayout>
