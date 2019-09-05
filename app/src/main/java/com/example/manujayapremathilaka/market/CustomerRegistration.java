@@ -13,8 +13,6 @@ import com.example.manujayapremathilaka.market.com.market.model.RegisteredCustom
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.w3c.dom.Text;
-
 public class CustomerRegistration extends AppCompatActivity {
 
     EditText txtFName, txtLName, txtNIC, txtMobileNo, txtAddress, txtEmail, txtPassword, txtRePassword;
