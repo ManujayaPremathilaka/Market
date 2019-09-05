@@ -1,4 +1,4 @@
-package com.example.manujayapremathilaka.market;
+package com.example.manujayapremathilaka.market.com.market.model;
 
 public class RegisteredCustomer {
 
