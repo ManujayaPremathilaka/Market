@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ItemMenu"></activity>
         <activity android:name=".Veg" />
         <activity android:name=".dashboard" />
         <activity android:name=".OrderSuccess" />
@@ -32,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CustomerRegistration" />
-        <activity android:name=".ItemMenu" />
         <activity android:name=".EmployeeHome" />
         <activity android:name=".Cart" />
     </application>
