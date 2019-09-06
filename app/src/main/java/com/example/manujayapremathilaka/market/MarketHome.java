@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.manujayapremathilaka.market.com.market.model.RegisteredCustomer;
 import com.example.manujayapremathilaka.market.databinding.ActivityMarketHomeBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

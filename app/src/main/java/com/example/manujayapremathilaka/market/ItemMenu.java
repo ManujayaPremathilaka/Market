@@ -13,6 +13,7 @@ public class ItemMenu extends AppCompatActivity {
         setContentView(R.layout.activity_item_menu);
     }
 
+
     public void onAddtoCartButtonPush(View view){
         Intent addToCart = new Intent(ItemMenu.this, Cart.class);
         startActivity(addToCart);
