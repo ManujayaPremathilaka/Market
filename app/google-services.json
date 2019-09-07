@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "954519552814-5l72l72ka86t5tq0g7hgaa6turnou9ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "89d85f67b9aad56b94956c14d89223ccb927cb48"
+          }
+        },
+        {
           "client_id": "954519552814-aoudad1qs6tn6m148mh667opls5091f9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
