@@ -15,20 +15,13 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        SubmitButton sb = (SubmitButton) findViewById(R.id.button6);
-        sb.setOnClickListener(new View.OnClickListener() {
-            public static final String TAG = "onclick";
 
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: Submit");
-            }
-        });
     }
     public void Admindashlog(View view){
         Intent dash = new Intent(home.this, dashboard.class);
         startActivity(dash);
     }
+
 
     
     }
