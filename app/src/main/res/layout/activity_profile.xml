@@ -259,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/mybutton"
-                    android:text="Edit My Account"
+                    android:text="Show Details"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"/>
 
@@ -269,6 +269,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/mybutton1"
+                    android:text="Update  Account"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btnDeleteAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mybutton"
                     android:text="Delete  Account"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white" />
