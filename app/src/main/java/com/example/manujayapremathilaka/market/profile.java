@@ -67,26 +67,18 @@ DiliverMember diliverMember;
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember");
                 reff.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("1")){
-                            try{
+
                                diliverMember.setPhone(con_number.getText().toString().trim());
 
                                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
-                               reff.setValue(diliverMember);
+                               reff.child("1").setValue(diliverMember);
 
                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
-                            catch (NumberFormatException e){
-                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else
-                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
-                    }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
