@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Veg extends AppCompatActivity {
     EditText a1,b1,c1,d1,a2,b2,c2,d2;
-    Button view1,view2,Up1,UP2;
+    Button view1,view2,Up1,UP2,de1,de2;
     DatabaseReference db;
     Iteam ITMM;
 
@@ -36,7 +36,7 @@ public class Veg extends AppCompatActivity {
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("-LoALPZfPEnCHZzWUtvp");
+                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -69,7 +69,7 @@ public class Veg extends AppCompatActivity {
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("-LoElp8w_BVBd3oqfg9v");
+                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("2");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -92,6 +92,8 @@ public class Veg extends AppCompatActivity {
 
             }
         });
+
+
 
 
 
