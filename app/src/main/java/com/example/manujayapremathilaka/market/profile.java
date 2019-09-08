@@ -34,6 +34,7 @@ DiliverMember diliverMember;
         tv_email1=(TextView)findViewById(R.id.tv_email1);
         btnEdit=(Button)findViewById(R.id.btnEdit);
         btnDelete=(Button)findViewById(R.id.btnDelete);
+        diliverMember = new DiliverMember();
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
