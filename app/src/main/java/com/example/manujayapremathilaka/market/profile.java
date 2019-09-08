@@ -67,25 +67,19 @@ DiliverMember diliverMember;
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember");
-                reff.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
 
                                diliverMember.setPhone(con_number.getText().toString().trim());
 
-                               reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+
                                reff.child("1").setValue(diliverMember);
 
                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
-            }
+
+
         });
 
     }
