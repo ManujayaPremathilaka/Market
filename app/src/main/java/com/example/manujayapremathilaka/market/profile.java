@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class profile extends AppCompatActivity {
 TextView license_no,nic_no,tv_name1,tv_email1;
 EditText con_number;
-Button btnEdit,btnDelete,btnDeleteAccount;
+Button btnShow,btnEdit,btnRem;
 DatabaseReference reff;
 DiliverMember diliverMember;
 
@@ -32,15 +32,15 @@ DiliverMember diliverMember;
         con_number=(EditText)findViewById(R.id.con_number);
         tv_name1=(TextView)findViewById(R.id.tv_name1);
         tv_email1=(TextView)findViewById(R.id.tv_email1);
+        btnShow=(Button)findViewById(R.id.btnShow);
         btnEdit=(Button)findViewById(R.id.btnEdit);
-        btnDelete=(Button)findViewById(R.id.btnDelete);
-        btnDeleteAccount =(Button)findViewById(R.id.btnDeleteAccount);
+        btnRem =(Button)findViewById(R.id.btnRem);
         diliverMember = new DiliverMember();
 
-        btnEdit.setOnClickListener(new View.OnClickListener() {
+        btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember");
+                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -65,7 +65,7 @@ DiliverMember diliverMember;
             }
         });
 
-        btnDelete.setOnClickListener(new View.OnClickListener() {
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
@@ -98,7 +98,7 @@ DiliverMember diliverMember;
             }
         });
 
-        btnDeleteAccount.setOnClickListener(new View.OnClickListener() {
+        btnRem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember");
