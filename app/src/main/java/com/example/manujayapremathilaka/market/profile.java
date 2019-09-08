@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,8 +18,9 @@ import com.google.firebase.database.ValueEventListener;
 public class profile extends AppCompatActivity {
 TextView license_no,nic_no,tv_name1,tv_email1;
 EditText con_number;
-Button btnEdit;
+Button btnEdit,btnDelete;
 DatabaseReference reff;
+DiliverMember diliverMember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ DatabaseReference reff;
         tv_name1=(TextView)findViewById(R.id.tv_name1);
         tv_email1=(TextView)findViewById(R.id.tv_email1);
         btnEdit=(Button)findViewById(R.id.btnEdit);
+        btnDelete=(Button)findViewById(R.id.btnDelete);
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,5 +62,40 @@ DatabaseReference reff;
                 });
             }
         });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("1")){
+                            try{
+                               diliverMember.setPhone(con_number.getText().toString().trim());
+
+                               reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                               reff.setValue(diliverMember);
+
+                               Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
     }
+
+
 }
