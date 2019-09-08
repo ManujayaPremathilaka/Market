@@ -110,7 +110,7 @@ public class Veg extends AppCompatActivity {
                                 ITMM.setPrice(pr);
 
                                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
-                                db.setValue("1");
+                               db.setValue("1");
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
