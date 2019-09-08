@@ -40,7 +40,7 @@ DiliverMember diliverMember;
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                reff= FirebaseDatabase.getInstance().getReference().child("DiliverMember");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -68,7 +68,7 @@ DiliverMember diliverMember;
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember");
+                reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
                 reff.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
