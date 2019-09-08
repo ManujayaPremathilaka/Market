@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class profile extends AppCompatActivity {
 TextView license_no,nic_no,tv_name1,tv_email1;
 EditText con_number;
-Button btnEdit,btnDelete;
+Button btnEdit,btnDelete,btnDeleteAccount;
 DatabaseReference reff;
 DiliverMember diliverMember;
 
@@ -34,6 +34,7 @@ DiliverMember diliverMember;
         tv_email1=(TextView)findViewById(R.id.tv_email1);
         btnEdit=(Button)findViewById(R.id.btnEdit);
         btnDelete=(Button)findViewById(R.id.btnDelete);
+        btnDeleteAccount =(Button)findViewById(R.id.btnDeleteAccount);
         diliverMember = new DiliverMember();
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -67,19 +68,59 @@ DiliverMember diliverMember;
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember");
+                reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("1")){
+                            try{
+                                diliverMember.setPhone(con_number.getText().toString().trim());
 
-                               diliverMember.setPhone(con_number.getText().toString().trim());
+                                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                                reff.setValue("1");
 
-
-                               reff.child("1").setValue(diliverMember);
-
-                               Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
 
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                    }
+                });
+            }
+        });
 
+        btnDeleteAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember");
+                reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("1")){
+                            reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                            reff.removeValue();
+
+                            Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Source to delete",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
         });
 
     }
