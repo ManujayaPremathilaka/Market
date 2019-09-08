@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,11 +21,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     Context context;
     ArrayList<Items> items;
+    String NIC;
+    DatabaseReference databaseReference;
 
-    public MyAdapter(Context c , ArrayList<Items> p)
+    public MyAdapter(Context c , ArrayList<Items> p, String NIC)
     {
         context = c;
         items = p;
+        this.NIC = NIC;
     }
 
     @NonNull
@@ -65,6 +70,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Items item = new Items();
+                    item.setItemNo(items.get(position).getItemNo());
+                    item.setPrice(items.get(position).getPrice());
+                    item.setItemPic(items.get(position).getItemPic());
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart").child(NIC);
+                    databaseReference.child(item.getItemNo()).setValue(item);
                     Toast.makeText(context, position+" is clicked", Toast.LENGTH_SHORT).show();
                 }
             });

@@ -21,6 +21,8 @@ public class ItemMenu extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Items> list;
     MyAdapter adapter;
+//    String NIC = getIntent().getStringExtra("NIC");
+    String NIC = "971380616V";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class ItemMenu extends AppCompatActivity {
                     Items item = dataSnapshot1.getValue(Items.class);
                     list.add(item);
                 }
-                adapter = new MyAdapter(ItemMenu.this, list);
+                adapter = new MyAdapter(ItemMenu.this, list, NIC);
                 recyclerView.setAdapter(adapter);
             }
 
