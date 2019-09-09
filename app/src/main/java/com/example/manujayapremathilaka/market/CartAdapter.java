@@ -17,35 +17,32 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<Items> items;
-    String NIC;
     DatabaseReference databaseReference;
+    int buttonPress = 0;
 
-    public MyAdapter(Context c , ArrayList<Items> p, String NIC)
-    {
+    public CartAdapter(Context c, ArrayList<Items> p) {
         context = c;
         items = p;
-        this.NIC = NIC;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.cardview,parent,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.cart_card_view,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.itemNo.setText(items.get(position).getItemNo());
-        holder.price.setText(items.get(position).getPrice());
+        holder.itemNo.setText("111");
+        holder.price.setText("2555");
+        holder.quantity.setText(items.get(position).getQuantity());
         Picasso.get().load(items.get(position).getItemPic()).into(holder.itemPic);
 
-        holder.btn.setVisibility(View.VISIBLE);
         holder.onClick(position);
-
     }
 
     @Override
@@ -55,30 +52,35 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView itemNo,price;
+        TextView itemNo,price, quantity;
         ImageView itemPic;
-        Button btn;
+        Button btnEdit, btnRemove;
         public MyViewHolder(View itemView) {
             super(itemView);
-            itemNo = (TextView) itemView.findViewById(R.id.itemNo);
-            price = (TextView) itemView.findViewById(R.id.price);
-            itemPic = (ImageView) itemView.findViewById(R.id.itemPic);
-            btn = (Button) itemView.findViewById(R.id.buy);
+            itemNo = (TextView) itemView.findViewById(R.id.itemNoCart);
+            price = (TextView) itemView.findViewById(R.id.priceCart);
+            quantity = (TextView)  itemView.findViewById(R.id.quantityCart);
+            quantity.setEnabled(false);
+            itemPic = (ImageView) itemView.findViewById(R.id.itemPicCart);
+
+            btnEdit = (Button) itemView.findViewById(R.id.btnEdit);
+            btnRemove = (Button) itemView.findViewById(R.id.btnRemove);
         }
         public void onClick(final int position)
         {
-            btn.setOnClickListener(new View.OnClickListener() {
+            btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Items item = new Items();
-                    item.setItemNo(items.get(position).getItemNo());
-                    item.setPrice(items.get(position).getPrice());
-                    item.setItemPic(items.get(position).getItemPic());
-                    item.setQuantity("1");
-
-                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart").child(NIC);
-                    databaseReference.child(item.getItemNo()).setValue(item);
-                    Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
+                    if (buttonPress == 0){
+                        quantity.setEnabled(true);
+                        buttonPress++;
+                        btnEdit.setText("SAVE");
+                    }
+                    else{
+                        quantity.setEnabled(false);
+                        buttonPress = 0;
+                        btnEdit.setText("EDIT");
+                    }
                 }
             });
         }

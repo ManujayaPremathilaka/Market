@@ -1,11 +1,14 @@
 package com.example.manujayapremathilaka.market;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,7 +24,7 @@ public class ItemMenu extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Items> list;
     MyAdapter adapter;
-//    String NIC = getIntent().getStringExtra("NIC");
+    //String NIC = getIntent().getStringExtra("NIC");
     String NIC = "971380616V";
 
     @Override
@@ -50,5 +53,12 @@ public class ItemMenu extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void cart(View view){
+        Intent intent = new Intent(ItemMenu.this, Cart.class);
+        intent.putExtra("NIC", NIC);
+        startActivity(intent);
+
     }
 }

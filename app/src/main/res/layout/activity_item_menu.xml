@@ -4,10 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemMenu">
+    tools:context=".ItemMenu"
+    >
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/myRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/myRecycler"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="cart"
+        android:padding="5dp"
+        android:text="Cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="39dp" />
+
 </android.support.constraint.ConstraintLayout>

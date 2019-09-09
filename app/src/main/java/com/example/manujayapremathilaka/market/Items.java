@@ -4,6 +4,7 @@ public class Items {
     private String itemNo;
     private String price;
     private String itemPic;
+    private String quantity;
     private String NIC;
 
     public Items() {
@@ -42,4 +43,8 @@ public class Items {
     public String getNIC() { return NIC; }
 
     public void setNIC(String NIC) { this.NIC = NIC; }
+
+    public String getQuantity() { return quantity; }
+
+    public void setQuantity(String quantity) { this.quantity = quantity; }
 }
