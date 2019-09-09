@@ -43,7 +43,7 @@ public class Cart extends AppCompatActivity {
                     list.add(item);
                 }
 
-                cartAdapter = new CartAdapter(Cart.this, list);
+                cartAdapter = new CartAdapter(Cart.this, list, NIC);
                 recyclerView.setAdapter(cartAdapter);
             }
 
