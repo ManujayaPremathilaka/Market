@@ -24,13 +24,15 @@ public class ItemMenu extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Items> list;
     MyAdapter adapter;
-    //String NIC = getIntent().getStringExtra("NIC");
-    String NIC = "971380616V";
+    String NIC;
+    //String NIC = "971380616V";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_menu);
+
+        NIC = getIntent().getStringExtra("NIC");
 
         recyclerView = (RecyclerView) findViewById(R.id.myRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -22,17 +22,19 @@ public class Cart extends AppCompatActivity {
     DatabaseReference databaseReference;
     ArrayList<Items> list;
     CartAdapter cartAdapter;
-    //String NIC = getIntent().getStringExtra("NIC");
-    String NIC = "971380616V";
+    private final String CART = "Cart";
+    String NIC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+        NIC = getIntent().getStringExtra("NIC");
+
         recyclerView = findViewById(R.id.cartRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart").child(NIC);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
         list = new ArrayList<Items>();
 
         databaseReference.addValueEventListener(new ValueEventListener() {

@@ -24,9 +24,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     Context context;
     ArrayList<Items> items;
+    Items updatedItem;
     DatabaseReference databaseReference;
-    String NIC;
-    int buttonPress = 0;
+    private final String CART = "Cart";
+    private final String SAVE = "SAVE";
+    private final String EDIT = "EDIT";
+    private String NIC;
+    private int buttonPress = 0;
 
     public CartAdapter(Context c, ArrayList<Items> p, String NIC) {
         context = c;
@@ -79,34 +83,31 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                     if (buttonPress == 0){
                         quantity.setEnabled(true);
                         buttonPress++;
-                        btnEdit.setText("SAVE");
+                        btnEdit.setText(SAVE);
                     }
                     else{
                         quantity.setEnabled(false);
                         buttonPress = 0;
-                        btnEdit.setText("EDIT");
+                        btnEdit.setText(EDIT);
 
-                        final Items updatedItem = new Items();
+                        updatedItem = new Items();
 
                         updatedItem.setItemNo(itemNo.getText().toString());
                         updatedItem.setPrice(price.getText().toString());
                         updatedItem.setQuantity(quantity.getText().toString());
                         updatedItem.setItemPic(items.get(position).getItemPic());
 
-                        databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart");
-
-
-                        databaseReference.addValueEventListener(new ValueEventListener() {
+                        databaseReference = FirebaseDatabase.getInstance().getReference().child(CART);
+                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.hasChild(NIC)){
-                                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart").child(NIC).child(updatedItem.getItemNo());
+                                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC).child(updatedItem.getItemNo());
                                     databaseReference.setValue(updatedItem);
 
                                     Intent intent = new Intent(context, Cart.class);
                                     intent.putExtra("NIC", NIC);
                                     context.startActivity(intent);
-                                   // context.startActivity(new Intent(context, Cart.class));
                                 }
                             }
 
@@ -117,6 +118,31 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                         });
 
                     }
+                }
+            });
+
+            btnRemove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.hasChild(itemNo.getText().toString())){
+                                databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC).child(itemNo.getText().toString());
+                                databaseReference.removeValue();
+
+                                Intent intent = new Intent(context, Cart.class);
+                                intent.putExtra("NIC", NIC);
+                                context.startActivity(intent);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
                 }
             });
         }

@@ -23,6 +23,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     ArrayList<Items> items;
     String NIC;
     DatabaseReference databaseReference;
+    private final String CART = "Cart";
+    private final String DEFAULT_QTY = "1";
 
     public MyAdapter(Context c , ArrayList<Items> p, String NIC)
     {
@@ -74,9 +76,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                     item.setItemNo(items.get(position).getItemNo());
                     item.setPrice(items.get(position).getPrice());
                     item.setItemPic(items.get(position).getItemPic());
-                    item.setQuantity("1");
+                    item.setQuantity(DEFAULT_QTY);
 
-                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart").child(NIC);
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
                     databaseReference.child(item.getItemNo()).setValue(item);
                     Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
                 }
