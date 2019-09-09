@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -25,6 +26,7 @@ public class ItemMenu extends AppCompatActivity {
     ArrayList<Items> list;
     MyAdapter adapter;
     String NIC;
+    ImageButton imgButton;
     //String NIC = "971380616V";
 
     @Override
@@ -33,6 +35,16 @@ public class ItemMenu extends AppCompatActivity {
         setContentView(R.layout.activity_item_menu);
 
         NIC = getIntent().getStringExtra("NIC");
+        imgButton = findViewById(R.id.imgBtnCartItemMenu);
+
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ItemMenu.this, Cart.class);
+                intent.putExtra("NIC", NIC);
+                startActivity(intent);
+            }
+        });
 
         recyclerView = (RecyclerView) findViewById(R.id.myRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

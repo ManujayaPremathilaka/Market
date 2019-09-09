@@ -23,7 +23,6 @@
         <activity android:name=".getOrder" />
         <activity android:name=".profile" />
         <activity android:name=".home" />
-        <activity android:name=".OrderList" />
         <activity android:name=".Register" />
         <activity android:name=".SignUpHome" />
         <activity android:name=".MarketHome">

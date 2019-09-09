@@ -1,11 +1,14 @@
 package com.example.manujayapremathilaka.market;
 
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +27,7 @@ public class Cart extends AppCompatActivity {
     CartAdapter cartAdapter;
     private final String CART = "Cart";
     String NIC;
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,16 @@ public class Cart extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         NIC = getIntent().getStringExtra("NIC");
+        imageButton = findViewById(R.id.imgBtnCartCart);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cart.this, Cart.class);
+                intent.putExtra("NIC", NIC);
+                startActivity(intent);
+            }
+        });
 
         recyclerView = findViewById(R.id.cartRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

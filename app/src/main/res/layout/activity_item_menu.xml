@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemMenu"
-    >
+    android:orientation="vertical"
+    tools:context=".ItemMenu">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtMarket"
+                android:layout_width="336dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="140dp"
+                android:paddingTop="8dp"
+                android:text="@string/Market"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imgBtnCartItemMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/shoppingcart" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/cart"
@@ -20,8 +52,6 @@
         android:layout_height="wrap_content"
         android:onClick="cart"
         android:padding="5dp"
-        android:text="Cart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="39dp" />
+        android:text="Cart" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
