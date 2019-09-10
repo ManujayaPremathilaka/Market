@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fruit"></activity>
+        <activity android:name=".Fruit"></activity>
+        <activity android:name=".fruit" />
         <activity android:name=".InsertItem" />
         <activity android:name=".ItemMenu" />
         <activity android:name=".Veg" />

@@ -78,7 +78,11 @@
     <string name="button16">Vegetable</string>
     <string name="button">Fruit</string>
 
-    <!--kusal-->
+
+    <!--*******admin dash.XML Srings********-->
+    <string name="fruit">Fruits</string>
+
+    <!--*******************************************kusal**********************************************************-->
 
     <string name="Name">Name</string>
     <string name="Email">Email</string>
@@ -91,9 +95,6 @@
     <string name="showdetailsdiliver">SHOW DETAILS</string>
     <string name="updatedetailsdiliver">UPDATE ACCOUNT</string>
     <string name="deletediliver">DELETE ACCOUNT</string>
-
-
-
 
 
 </resources>
