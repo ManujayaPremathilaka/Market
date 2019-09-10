@@ -28,4 +28,35 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btnSave">SAVE</string>
     <string name="btnEdit">EDIT</string>
+
+    <!--**********************************************Liyanage.D.R.Y  IT18119718*************************************************************************-->
+
+    <!--*******veg.XML Srings********-->
+    <string name="Vegetables">Vegetables</string>
+    <string name="textView7">ID:</string>
+    <string name="id">ID</string>
+    <string name="textView40">Price:</string>
+    <string name="price">Price</string>
+    <string name="name">Name</string>
+    <string name="textView8">Name:</string>
+    <string name="textView9">QTY:</string>
+    <string name="qty">Qty</string>
+    <string name="Addnew">Add</string>
+    <string name="View1">View</string>
+    <string name="Delete1">Delete</string>
+    <string name="update1">Update</string>
+    <string name="textView42">ID:</string>
+    <string name="id2">ID</string>
+    <string name="textView43">Name:</string>
+    <string name="name2">Name</string>
+    <string name="textView44">Price:</string>
+    <string name="price2">Price</string>
+    <string name="textView45">QTY:</string>
+    <string name="qty2">QTY</string>
+    <string name="View2">View</string>
+    <string name="delete2">Delete</string>
+    <string name="Update2">Update</string>
+
+
+
 </resources>
