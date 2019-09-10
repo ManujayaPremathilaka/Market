@@ -1,0 +1,80 @@
+{
+  "project_info": {
+    "project_number": "954519552814",
+    "firebase_url": "https://market-a9576.firebaseio.com",
+    "project_id": "market-a9576",
+    "storage_bucket": "market-a9576.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954519552814:android:505297d09393104c",
+        "android_client_info": {
+          "package_name": "com.example.manujayapremathilaka.market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954519552814-5l72l72ka86t5tq0g7hgaa6turnou9ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "89d85f67b9aad56b94956c14d89223ccb927cb48"
+          }
+        },
+        {
+          "client_id": "954519552814-aoudad1qs6tn6m148mh667opls5091f9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "d4976a52e4afebf7a858b7ade59172397e453a92"
+          }
+        },
+        {
+          "client_id": "954519552814-hbrj0tdrgm682acmevdos5k4pdfd7tk7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "cfedc48c001484d20984a5123534215272068d8a"
+          }
+        },
+        {
+          "client_id": "954519552814-i2i6cha7bjluoiu1sr03p3f83dckqs54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "2e8ce8a7a6059970709d72434fd567c8f7863895"
+          }
+        },
+        {
+          "client_id": "954519552814-8rlsdbi691jkle9fe1fftto69rsu7usp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manujayapremathilaka.market",
+            "certificate_hash": "4459ca0423d8c54f525d257491c77a339c3f6fe9"
+          }
+        },
+        {
+          "client_id": "954519552814-ofahmlc6junu8j9tip5c0kjpb5g4uttn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUYnFhLFI9Wd83ELiy3YOlxVIKDKPNho8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954519552814-ofahmlc6junu8j9tip5c0kjpb5g4uttn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
