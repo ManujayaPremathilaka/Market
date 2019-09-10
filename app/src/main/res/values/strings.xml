@@ -71,13 +71,13 @@
     <string name="tv_QTY">Quantity</string>
     <string name="et_price">Price</string>
     <string name="tv_Price">Price</string>
-    <string name="Addnew2">Add</string>
+    <string name="Addnew1">Add</string>
 
-    <!--
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>-->
+    <!--*******admin dash.XML Srings********-->
+    <string name="textView">Admin Dash</string>
+    <string name="button16">Vegetable</string>
+    <string name="button">Fruit</string>
+
 
 
 

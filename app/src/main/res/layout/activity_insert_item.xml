@@ -38,7 +38,7 @@
             android:id="@+id/additeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ADD ITEAMS"
+            android:text="@string/additeam"
             android:textColor="#FFF"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="17dp"
-            android:text="Iteam Id"
+            android:text="@string/tv_IeamId"
             android:textColor="#ffffff"
             android:textSize="16sp" />
 
@@ -94,7 +94,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="17dp"
-            android:text="Item Name"
+            android:text="@string/tv_Name"
             android:textColor="#ffffff"
             android:textSize="16sp" />
         <!--Nic-->
@@ -121,7 +121,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="17dp"
-            android:text="Quantity"
+            android:text="@string/tv_QTY"
             android:textColor="#ffffff"
             android:textSize="16sp" />
         <!--vehcal-->
@@ -148,7 +148,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="17dp"
-            android:text="Price"
+            android:text="@string/tv_Price"
             android:textColor="#ffffff"
             android:textSize="16sp"/>
 
@@ -163,7 +163,7 @@
             android:background="@color/gradEnd"
             android:textColor="@color/DarkBlue"
             android:textStyle="italic"
-            android:text="Add "
+            android:text="@string/Addnew1 "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
