@@ -1,5 +1,8 @@
 package com.example.manujayapremathilaka.market;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.jar.Attributes;
-
 public class InsertItem extends AppCompatActivity {
-
     EditText IeamID,IteamName,QTY,price;
     Button Add;
     DatabaseReference db;
@@ -52,27 +52,24 @@ public class InsertItem extends AppCompatActivity {
             }
         });
         Add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                                   @Override
+                                   public void onClick(View view) {
 
-                double pr = Double.parseDouble(price.getText().toString().trim());
+                                       double pr = Double.parseDouble(price.getText().toString().trim());
 
-                ITM.setID(IeamID.getText().toString().trim());
-                ITM.setName(IteamName.getText().toString().trim());
-                ITM.setQTY(QTY.getText().toString().trim());
-                ITM.setPrice(pr);
+                                       ITM.setID(IeamID.getText().toString().trim());
+                                       ITM.setName(IteamName.getText().toString().trim());
+                                       ITM.setQTY(QTY.getText().toString().trim());
+                                       ITM.setPrice(pr);
 
-                db.push().setValue(ITM);
-                db.child(String.valueOf(maxid+1)).setValue(ITM);
-                Toast.makeText(InsertItem.this, "successfull Adding",Toast.LENGTH_LONG).show();
+                                       db.push().setValue(ITM);
+                                       db.child(String.valueOf(maxid+1)).setValue(ITM);
+                                       Toast.makeText(InsertItem.this, "successfull Adding",Toast.LENGTH_LONG).show();
 
 
 
-            }
+                                   }
                                }
         );
-
-
     }
-
 }

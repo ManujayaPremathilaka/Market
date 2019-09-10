@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".InsertItem">
 
-
-
     <ImageView
         android:id="@+id/homeimage"
         android:layout_width="526dp"
@@ -36,14 +34,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textview6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD ITEAMS"
-        android:textColor="#FFF"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textview6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD ITEAMS"
+            android:textColor="#FFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_IteamId"
@@ -165,7 +163,7 @@
             android:background="@color/gradEnd"
             android:textColor="@color/DarkBlue"
             android:textStyle="italic"
-            android:text="Add Iteam "
+            android:text="Add "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -184,7 +182,5 @@
         android:src="@drawable/clover"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 </android.support.constraint.ConstraintLayout>
