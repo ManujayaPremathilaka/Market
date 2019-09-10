@@ -183,6 +183,7 @@ public class MarketHome extends AppCompatActivity {
                         RegisteredCustomer registeredCustomer = d.getValue(RegisteredCustomer.class);
                             if (registeredCustomer.getPassword().equals(password.getText().toString())) {
                                 Intent login = new Intent(MarketHome.this, ItemMenu.class);
+                                login.putExtra("NIC", registeredCustomer.getNIC());
                                 startActivity(login);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();

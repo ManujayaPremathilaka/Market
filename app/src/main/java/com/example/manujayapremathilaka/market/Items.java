@@ -4,7 +4,8 @@ public class Items {
     private String itemNo;
     private String price;
     private String itemPic;
-    //private boolean permission;
+    private String quantity;
+    private String NIC;
 
     public Items() {
     }
@@ -13,7 +14,6 @@ public class Items {
         this.itemNo = itemNo;
         this.price = price;
         this.itemPic = itemPic;
-        //this.permission = permission;
     }
 
     public String getItemNo() {
@@ -40,11 +40,11 @@ public class Items {
         this.itemPic = itemPic;
     }
 
-//    public boolean getPermission() {
-//        return permission;
-//    }
-//
-//    public void setPermission(boolean permission) {
-//        this.permission = permission;
-//    }
+    public String getNIC() { return NIC; }
+
+    public void setNIC(String NIC) { this.NIC = NIC; }
+
+    public String getQuantity() { return quantity; }
+
+    public void setQuantity(String quantity) { this.quantity = quantity; }
 }

@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,11 +21,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     Context context;
     ArrayList<Items> items;
+    String NIC;
+    DatabaseReference databaseReference;
+    private final String CART = "Cart";
+    private final String DEFAULT_QTY = "1";
 
-    public MyAdapter(Context c , ArrayList<Items> p)
+    public MyAdapter(Context c , ArrayList<Items> p, String NIC)
     {
         context = c;
         items = p;
+        this.NIC = NIC;
     }
 
     @NonNull
@@ -38,8 +45,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         holder.price.setText(items.get(position).getPrice());
         Picasso.get().load(items.get(position).getItemPic()).into(holder.itemPic);
 
-            holder.btn.setVisibility(View.VISIBLE);
-            holder.onClick(position);
+        holder.btn.setVisibility(View.VISIBLE);
+        holder.onClick(position);
 
     }
 
@@ -65,7 +72,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, position+" is clicked", Toast.LENGTH_SHORT).show();
+                    Items item = new Items();
+                    item.setItemNo(items.get(position).getItemNo());
+                    item.setPrice(items.get(position).getPrice());
+                    item.setItemPic(items.get(position).getItemPic());
+                    item.setQuantity(DEFAULT_QTY);
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
+                    databaseReference.child(item.getItemNo()).setValue(item);
+                    Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
                 }
             });
         }

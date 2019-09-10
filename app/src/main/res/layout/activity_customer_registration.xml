@@ -75,8 +75,6 @@
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="46dp"
-        android:layout_marginStart="46dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
