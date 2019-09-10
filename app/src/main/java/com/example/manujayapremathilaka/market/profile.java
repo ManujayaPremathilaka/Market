@@ -16,11 +16,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
-TextView license_no,nic_no,tv_name1,tv_email1;
-EditText con_number;
-Button btnShow,btnEdit,btnRem;
-DatabaseReference reff;
-DiliverMember diliverMember;
+    TextView license_no,nic_no,tv_name1,tv_email1;
+    EditText con_number;
+    Button btnShow,btnEdit,btnRem;
+    DatabaseReference reff;
+    DiliverMember diliverMember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
