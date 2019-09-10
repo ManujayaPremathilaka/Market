@@ -68,7 +68,7 @@ public class profile extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
+                reff =FirebaseDatabase.getInstance().getReference().child("DiliverMember");
                 reff.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -80,6 +80,19 @@
 
 
 
+    <!--kusal-->
+
+    <string name="Name">Name</string>
+    <string name="Email">Email</string>
+    <string name="ContactNo">Contact No</string>
+    <string name="Nic_no">NIC No</string>
+    <string name="Vehical_no">Vehical No</string>
+    <string name="Password_diliver">Password</string>
+    <string name="Repassword_diliver">Re Enter Password</string>
+    <string name="Register">Register Me</string>
+    <string name="showdetailsdiliver">SHOW DETAILS</string>
+    <string name="updatedetailsdiliver">UPDATE ACCOUNT</string>
+    <string name="deletediliver">DELETE ACCOUNT</string>
 
 
 </resources>
