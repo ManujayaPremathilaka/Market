@@ -33,7 +33,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Name" />
+        android:hint= "@string/Name"/>
 
     <TextView
         android:id="@+id/tv_name"
@@ -45,7 +45,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Name"
+        android:text="@string/Name"
         android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--email-->
@@ -60,7 +60,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Email" />
+        android:hint="@string/Email" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -72,7 +72,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Eamil"
+        android:text="@string/Email"
         android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--Contact-->
@@ -87,7 +87,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Contact No" />
+        android:hint="@string/ContactNo" />
 
     <TextView
         android:id="@+id/tv_contactno"
@@ -99,7 +99,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Contact No"
+        android:text="@string/ContactNo"
         android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--Nic-->
@@ -114,7 +114,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="NIC No" />
+        android:hint="@string/Nic_no" />
 
     <TextView
         android:id="@+id/tv_nic"
@@ -126,7 +126,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="NIC No:"
+        android:text="@string/Nic_no"
         android:textColor="#ffffff"
         android:textSize="16sp" />
     <!--vehcal-->
@@ -141,7 +141,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Vehical No" />
+        android:hint="@string/Vehical_no" />
 
     <TextView
         android:id="@+id/tv_vehicalno"
@@ -153,7 +153,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Vehical No"
+        android:text="@string/Vehical_no"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
@@ -169,7 +169,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Password" />
+        android:hint="@string/Password_diliver" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -181,7 +181,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Password"
+        android:text="@string/Password_diliver"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
@@ -197,7 +197,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Re Enter Password" />
+        android:hint="@string/Repassword_diliver" />
 
     <TextView
         android:id="@+id/tv_repassword"
@@ -209,7 +209,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Re Enter Password"
+        android:text="@string/Repassword_diliver"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
@@ -221,6 +221,6 @@
         android:layout_below="@+id/et_repassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Register Me" />
+        android:text="@string/Register" />
 
 </RelativeLayout>

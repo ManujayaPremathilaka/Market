@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/headings"
                     android:textSize="13sp"
-                    android:text="Contact No"/>
+                    android:text="@string/ContactNo"/>
 
                 <EditText
                     android:id="@+id/con_number"
@@ -196,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/headings"
                     android:textSize="13sp"
-                    android:text="NIC No"/>
+                    android:text="@string/Nic_no"/>
 
                 <TextView
                     android:id="@+id/nic_no"
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/headings"
                     android:textSize="13sp"
-                    android:text="License No"/>
+                    android:text="@string/Vehical_no"/>
 
                 <TextView
                     android:id="@+id/license_no"
@@ -259,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#32CD32"
-                    android:text=" Show Details "
+                    android:text="@string/showdetailsdiliver"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"/>
 
@@ -270,7 +270,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="#24a0ed"
-                    android:text="Update  Account"
+                    android:text="@string/updatedetailsdiliver"
                     android:textColor="@android:color/white" />
 
                 <Button
@@ -280,7 +280,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="#FF4081"
-                    android:text="Delete  Account"
+                    android:text="@string/deletediliver"
                     android:textColor="@android:color/white" />
 
 
