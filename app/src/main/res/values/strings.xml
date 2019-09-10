@@ -60,11 +60,25 @@
     <string name="textview6">Hi Have a Nice Day!</string>
     <string name="button17">Dash Board</string>
 
-   <!-- <string name=""></string>
+
+    <!--*******InserIteam.XML Srings********-->
+    <string name="additeam">Add Iteam</string>
+    <string name="et_IteamId">Iteam Id</string>
+    <string name="tv_IeamId">Iteam Id</string>
+    <string name="et_Name">Name</string>
+    <string name="tv_Name">Name</string>
+    <string name="et_QTY">QTY</string>
+    <string name="tv_QTY">Quantity</string>
+    <string name="et_price">Price</string>
+    <string name="tv_Price">Price</string>
+    <string name="Addnew2">Add</string>
+
+    <!--
     <string name=""></string>
     <string name=""></string>
     <string name=""></string>
     <string name=""></string>-->
+
 
 
 
