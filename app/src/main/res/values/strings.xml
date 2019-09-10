@@ -56,6 +56,15 @@
     <string name="View2">View</string>
     <string name="delete2">Delete</string>
     <string name="Update2">Update</string>
+    <!--*******home.XML Srings********-->
+    <string name="textview6">Hi Have a Nice Day!</string>
+    <string name="button17">Dash Board</string>
+
+   <!-- <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>-->
 
 
 
