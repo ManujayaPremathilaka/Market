@@ -153,7 +153,7 @@
             android:textSize="16sp"/>
 
         <Button
-            android:id="@+id/Addnew1"
+            android:id="@+id/Addnew"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
@@ -163,7 +163,7 @@
             android:background="@color/gradEnd"
             android:textColor="@color/DarkBlue"
             android:textStyle="italic"
-            android:text="@string/Addnew1 "
+            android:text="Add "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
