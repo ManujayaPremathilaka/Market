@@ -72,7 +72,7 @@ public class profile extends AppCompatActivity {
                 reff.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("con_number")){
+                        if(dataSnapshot.hasChild("1")){
                             try{
                                 diliverMember.setPhone(con_number.getText().toString().trim());
 
