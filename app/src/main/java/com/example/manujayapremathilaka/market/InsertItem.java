@@ -29,19 +29,19 @@ public class InsertItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_item);
 
-        //edittext
-        IeamID=(EditText)findViewById(R.id.et_IteamId);
-        IteamName=(EditText)findViewById(R.id.et_Name);
-        QTY=(EditText)findViewById(R.id.et_QTY);
-        price=(EditText)findViewById(R.id.et_price);
+      //edittext
+                IeamID = (EditText) findViewById(R.id.et_IteamId);
+        IteamName = (EditText) findViewById(R.id.et_Name);
+        QTY = (EditText) findViewById(R.id.et_QTY);
+        price = (EditText) findViewById(R.id.et_price);
         //button
-        Add = (Button)findViewById(R.id.Addnew) ;
+        Add = (Button) findViewById(R.id.Addnew);
         ITM = new Iteam();
         db = FirebaseDatabase.getInstance().getReference().child("Iteam");
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     maxid = dataSnapshot.getChildrenCount();
                 }
             }
@@ -63,9 +63,8 @@ public class InsertItem extends AppCompatActivity {
                                        ITM.setPrice(pr);
 
                                        db.push().setValue(ITM);
-                                       db.child(String.valueOf(maxid+1)).setValue(ITM);
-                                       Toast.makeText(InsertItem.this, "successfull Adding",Toast.LENGTH_LONG).show();
-
+                                       db.child(String.valueOf(maxid + 1)).setValue(ITM);
+                                       Toast.makeText(InsertItem.this, "successfull Adding", Toast.LENGTH_LONG).show();
 
 
                                    }
