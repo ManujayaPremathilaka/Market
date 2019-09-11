@@ -72,12 +72,12 @@ public class profile extends AppCompatActivity {
                 reff.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("1")){
+                        if(dataSnapshot.hasChild("con_number")){
                             try{
                                 diliverMember.setPhone(con_number.getText().toString().trim());
 
-                                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
-                                reff.setValue("1");
+                                reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("con_number");
+                                reff.setValue("con_number");
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
