@@ -17,4 +17,8 @@ public class dashboard extends AppCompatActivity {
         Intent vegpage = new Intent(dashboard.this, Veg.class);
         startActivity(vegpage);
     }
+    public void LaodfruitPAge(View view){
+        Intent frpage = new Intent(dashboard.this, Fruit.class);
+        startActivity(frpage);
+    }
 }
