@@ -37,7 +37,7 @@ public class InsertItem extends AppCompatActivity {
         //button
         Add = (Button) findViewById(R.id.Addnew);
         ITM = new Iteam();
-        db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+        db = FirebaseDatabase.getInstance().getReference().child("Item");
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

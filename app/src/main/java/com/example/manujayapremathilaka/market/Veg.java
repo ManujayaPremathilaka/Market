@@ -43,7 +43,7 @@ public class Veg extends AppCompatActivity {
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("1");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -71,7 +71,7 @@ public class Veg extends AppCompatActivity {
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("2");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("2");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,7 +100,7 @@ public class Veg extends AppCompatActivity {
       Up1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db =FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
+                db =FirebaseDatabase.getInstance().getReference().child("Item").child("1");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -110,7 +110,7 @@ public class Veg extends AppCompatActivity {
                                 double pr = Double.parseDouble(c1.getText().toString().trim());
                                 ITMM.setPrice(pr);
 
-                               db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
+                               db = FirebaseDatabase.getInstance().getReference().child("Item").child("1");
                                 db.setValue("1");
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
@@ -129,12 +129,12 @@ public class Veg extends AppCompatActivity {
         De2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db = FirebaseDatabase.getInstance().getReference().child("Item");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("2")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("2");
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("2");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
@@ -154,12 +154,12 @@ public class Veg extends AppCompatActivity {
         De1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db = FirebaseDatabase.getInstance().getReference().child("Item");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("1")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("1");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();

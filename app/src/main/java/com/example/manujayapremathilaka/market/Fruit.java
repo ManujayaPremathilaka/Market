@@ -47,7 +47,7 @@ public class Fruit extends AppCompatActivity {
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("3");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("3");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,7 +75,7 @@ public class Fruit extends AppCompatActivity {
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("4");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -104,7 +104,7 @@ public class Fruit extends AppCompatActivity {
         Up1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db =FirebaseDatabase.getInstance().getReference().child("Iteam").child("3");
+                db =FirebaseDatabase.getInstance().getReference().child("Item").child("3");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -114,7 +114,7 @@ public class Fruit extends AppCompatActivity {
                             double pr = Double.parseDouble(c1.getText().toString().trim());
                             ITMM.setPrice(pr);
 
-                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("3");
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("3");
                             db.setValue("3");
 
                             Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
@@ -133,12 +133,12 @@ public class Fruit extends AppCompatActivity {
         De2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db = FirebaseDatabase.getInstance().getReference().child("Item");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("4")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("4");
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
@@ -158,12 +158,12 @@ public class Fruit extends AppCompatActivity {
         De1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db = FirebaseDatabase.getInstance().getReference().child("Item");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("3")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("3");
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("3");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
