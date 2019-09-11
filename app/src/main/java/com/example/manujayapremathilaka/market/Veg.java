@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +38,7 @@ public class Veg extends AppCompatActivity {
         Up1 = (Button)findViewById(R.id.update1);
         Up2 = (Button)findViewById(R.id.Update2);
         De1 = (Button)findViewById(R.id.Delete1);
-        De1 = (Button)findViewById(R.id.delete2);
+        De2 = (Button)findViewById(R.id.delete2);
         //retrivw of 1st iteam--------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +95,7 @@ public class Veg extends AppCompatActivity {
 
             }
         });
+        //update 1st iteam
         ITMM = new Iteam();
       Up1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,8 +124,33 @@ public class Veg extends AppCompatActivity {
                 });
             }
         });
-      //delete 1st iteam
+      //delete 2nd iteam
 
+        De2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("2")){
+                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("2");
+                            db.removeValue();
+
+                            Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Source to delete",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+        //delete 1st iteam
         De1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,6 +175,7 @@ public class Veg extends AppCompatActivity {
                 });
             }
         });
+
 
 
     }
