@@ -62,7 +62,7 @@ public class InsertItem extends AppCompatActivity {
                                        ITM.setQTY(QTY.getText().toString().trim());
                                        ITM.setPrice(pr);
 
-                                       db.push().setValue(ITM);
+
                                        db.child(String.valueOf(maxid + 1)).setValue(ITM);
                                        Toast.makeText(InsertItem.this, "successfull Adding", Toast.LENGTH_LONG).show();
 
