@@ -3,6 +3,7 @@ package com.example.manujayapremathilaka.market;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,16 +52,38 @@ public class Register extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                diliverMember.setName(et_name.getText().toString().trim());
-                diliverMember.setEmail(et_email.getText().toString().trim());
-                diliverMember.setPhone(et_contactno.getText().toString().trim());
-                diliverMember.setNic(et_nic.getText().toString().trim());
-                diliverMember.setVehicalno(et_vehicalno.getText().toString().trim());
-                diliverMember.setPassowrd(et_passowrd.getText().toString().trim());
-                diliverMember.setRepassword(et_repassword.getText().toString().trim());
-                reff.child(String.valueOf(maxid+1)).setValue(diliverMember);
+               try{
+                   if(TextUtils.isEmpty(et_name.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter a Name",Toast.LENGTH_SHORT).show();
+                   else if(TextUtils.isEmpty(et_email.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter a Email",Toast.LENGTH_SHORT).show();
+                   else if(TextUtils.isEmpty(et_nic.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter a NIC NO",Toast.LENGTH_SHORT).show();
+                   else if(TextUtils.isEmpty(et_vehicalno.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter Vehical No",Toast.LENGTH_SHORT).show();
+                   else if(TextUtils.isEmpty(et_passowrd.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter a Password",Toast.LENGTH_SHORT).show();
+                   else if(TextUtils.isEmpty(et_repassword.getText().toString()))
+                       Toast.makeText(getApplicationContext(),"Please Enter the Same Password",Toast.LENGTH_SHORT).show();
+                   else {
 
-                Toast.makeText(Register.this,"Registered Succesfully",Toast.LENGTH_LONG).show();
+
+                       diliverMember.setName(et_name.getText().toString().trim());
+                       diliverMember.setEmail(et_email.getText().toString().trim());
+                       diliverMember.setPhone(et_contactno.getText().toString().trim());
+                       diliverMember.setNic(et_nic.getText().toString().trim());
+                       diliverMember.setVehicalno(et_vehicalno.getText().toString().trim());
+                       diliverMember.setPassowrd(et_passowrd.getText().toString().trim());
+                       diliverMember.setRepassword(et_repassword.getText().toString().trim());
+                       reff.child(String.valueOf(maxid + 1)).setValue(diliverMember);
+
+                       Toast.makeText(Register.this, "Registered Succesfully", Toast.LENGTH_LONG).show();
+
+                   }
+               }
+               catch (NumberFormatException e){
+                    Toast.makeText(getApplicationContext(),"Invalid Contact number",Toast.LENGTH_SHORT).show();
+               }
             }
         });
 
