@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Veg extends AppCompatActivity {
     EditText a1,b1,c1,d1,a2,b2,c2,d2;
-    Button view1,view2,Up1,Up2;
+    Button view1,view2,Up1,Up2,De1,De2;
     DatabaseReference db;
     Iteam ITMM;
 
@@ -39,7 +39,8 @@ public class Veg extends AppCompatActivity {
         view2 = (Button)findViewById(R.id.View2);
         Up1 = (Button)findViewById(R.id.update1);
         Up2 = (Button)findViewById(R.id.Update2);
-
+        De1 = (Button)findViewById(R.id.Delete1);
+        De1 = (Button)findViewById(R.id.delete2);
         //retrivw of 1st iteam--------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +125,33 @@ public class Veg extends AppCompatActivity {
                 });
             }
         });
+      //delete 1st iteam
+
+        De1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db = FirebaseDatabase.getInstance().getReference().child("Iteam");
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("1")){
+                            db = FirebaseDatabase.getInstance().getReference().child("Iteam").child("1");
+                            db.removeValue();
+
+                            Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Source to delete",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
 
     }
     public void InsertIeam(View view){
