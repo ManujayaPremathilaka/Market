@@ -77,7 +77,7 @@ public class profile extends AppCompatActivity {
                                 diliverMember.setPhone(con_number.getText().toString().trim());
 
                                 reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
-                                reff.setValue("con_number");
+                                reff.setValue(diliverMember);
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
