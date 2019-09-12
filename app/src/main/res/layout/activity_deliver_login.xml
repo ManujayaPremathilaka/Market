@@ -55,7 +55,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Username :"
+        android:text="@string/Password_diliver"
         android:textColor="#000000"
         android:textSize="16sp" />
 
@@ -82,7 +82,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="17dp"
-        android:text="Password :"
+        android:text="@string/UserName"
         android:textColor="#000000"
         android:textSize="16sp" />
 

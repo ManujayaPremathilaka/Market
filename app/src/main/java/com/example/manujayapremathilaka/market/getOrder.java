@@ -19,6 +19,7 @@ public class getOrder extends AppCompatActivity {
     }
 
     public void LoadViewAddress(View view){
+
         Intent loadViewAddress = new Intent(getOrder.this, getAddress.class);
         startActivity(loadViewAddress);
     }
