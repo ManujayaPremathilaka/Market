@@ -1,5 +1,6 @@
 package com.example.manujayapremathilaka.market;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -46,7 +47,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.itemNo.setText(items.get(position).getItemNo());
+        holder.itemNo.setText(items.get(position).getID());
         holder.price.setText(items.get(position).getPrice());
         holder.quantity.setText(items.get(position).getQuantity());
         Picasso.get().load(items.get(position).getItemPic()).into(holder.itemPic);
@@ -92,7 +93,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
                         updatedItem = new Items();
 
-                        updatedItem.setItemNo(itemNo.getText().toString());
+                        updatedItem.setID(items.get(position).getID());
+                        updatedItem.setName(itemNo.getText().toString());
                         updatedItem.setPrice(price.getText().toString());
                         updatedItem.setQuantity(quantity.getText().toString());
                         updatedItem.setItemPic(items.get(position).getItemPic());
@@ -102,12 +104,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.hasChild(NIC)){
-                                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC).child(updatedItem.getItemNo());
+                                    databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC).child(updatedItem.getID());
                                     databaseReference.setValue(updatedItem);
 
                                     Intent intent = new Intent(context, Cart.class);
                                     intent.putExtra("NIC", NIC);
                                     context.startActivity(intent);
+                                    ((Activity)context).finish();
                                 }
                             }
 
@@ -125,7 +128,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 @Override
                 public void onClick(View view) {
                     databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
-                    databaseReference.addValueEventListener(new ValueEventListener() {
+                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChild(itemNo.getText().toString())){
@@ -135,6 +138,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                                 Intent intent = new Intent(context, Cart.class);
                                 intent.putExtra("NIC", NIC);
                                 context.startActivity(intent);
+                                ((Activity)context).finish();
                             }
                         }
 
@@ -144,7 +148,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                         }
                     });
                 }
+
             });
+
         }
     }
 }

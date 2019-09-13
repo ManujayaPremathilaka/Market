@@ -27,7 +27,7 @@ public class ItemMenu extends AppCompatActivity {
     MyAdapter adapter;
     String NIC;
     ImageButton imgButton;
-    //String NIC = "971380616V";
+    private final String TABLE = "Item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ItemMenu extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.myRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("uploads");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(TABLE);
         list = new ArrayList<Items>();
 
         databaseReference.addValueEventListener(new ValueEventListener() {

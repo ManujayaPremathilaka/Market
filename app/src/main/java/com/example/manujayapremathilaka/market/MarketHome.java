@@ -57,7 +57,6 @@ public class MarketHome extends AppCompatActivity {
         animateButtonWidth();
         fadeOutTextAndSetProgressDialog();
         nextAction();
-        //getUser();
     }
 
     private void animateButtonWidth(){
@@ -105,7 +104,7 @@ public class MarketHome extends AppCompatActivity {
                 delayedStartNextActivity();
                 //getUser();
             }
-        }, 2000);
+        }, 1000);
     }
 
     private void revealButton(){
@@ -150,13 +149,14 @@ public class MarketHome extends AppCompatActivity {
                 if(((userName.getText().toString()).equalsIgnoreCase("admin")) && ((password.getText().toString()).equalsIgnoreCase("admin"))){
                     Intent adminLogin = new Intent(MarketHome.this, EmployeeHome.class);
                     startActivity(adminLogin);
+                    finish();
 
                 }
                 else{
                   getUser();
                 }
             }
-        }, 100);
+        }, 1);
     }
 
 
@@ -179,8 +179,9 @@ public class MarketHome extends AppCompatActivity {
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot d: dataSnapshot.getChildren()){
-                        RegisteredCustomer registeredCustomer = d.getValue(RegisteredCustomer.class);
+                    if (dataSnapshot.hasChildren()){
+                        for (DataSnapshot d: dataSnapshot.getChildren()){
+                            RegisteredCustomer registeredCustomer = d.getValue(RegisteredCustomer.class);
                             if (registeredCustomer.getPassword().equals(password.getText().toString())) {
                                 Intent login = new Intent(MarketHome.this, ItemMenu.class);
                                 login.putExtra("NIC", registeredCustomer.getNIC());
@@ -189,8 +190,17 @@ public class MarketHome extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                                 Intent login = new Intent(MarketHome.this, MarketHome.class);
                                 startActivity(login);
+                                finish();
                             }
+                        }
                     }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Please Register First", Toast.LENGTH_LONG).show();
+                        Intent login = new Intent(MarketHome.this, MarketHome.class);
+                        startActivity(login);
+                        finish();
+                    }
+
                 }
 
                 @Override

@@ -58,7 +58,7 @@ public class CustomerRegistration extends AppCompatActivity {
         if(TextUtils.isEmpty(txtFName.getText().toString())){
             Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(txtFName.getText().toString())){
+        else if(TextUtils.isEmpty(txtLName.getText().toString())){
             Toast.makeText(getApplicationContext(), "Please enter Last name", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(txtNIC.getText().toString())){
@@ -78,6 +78,9 @@ public class CustomerRegistration extends AppCompatActivity {
         }
         else if(TextUtils.isEmpty(txtEmail.getText().toString())){
             Toast.makeText(getApplicationContext(), "Please enter Email", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(txtPassword.getText().toString()) || ((txtPassword.getText().toString()) != (txtRePassword.getText().toString()))){
+            Toast.makeText(getApplicationContext(), "Password not matching", Toast.LENGTH_SHORT).show();
         }
 
         else{

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ItemMenu">
+    tools:context=".ItemMenu"
+    android:background="#E3F2FD">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

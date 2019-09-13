@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Cart">
+    tools:context=".Cart"
+    android:background="#E3F2FD">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
 
             <TextView
                 android:id="@+id/txtMarketCart"
-                android:layout_width="336dp"
+                android:layout_width="330dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="140dp"
@@ -44,8 +45,25 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cartRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="574dp">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="125dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:background="@drawable/login_button"
+        android:text="@string/order" />
 
 </LinearLayout>

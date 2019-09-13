@@ -41,7 +41,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.itemNo.setText(items.get(position).getItemNo());
+        holder.itemDescription.setText("250g packet of "+ items.get(position).getName());
+        holder.itemNo.setText(items.get(position).getID());
         holder.price.setText(items.get(position).getPrice());
         Picasso.get().load(items.get(position).getItemPic()).into(holder.itemPic);
 
@@ -57,12 +58,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView itemNo,price;
+        TextView itemNo,price, itemDescription;
         ImageView itemPic;
         Button btn;
         public MyViewHolder(View itemView) {
             super(itemView);
             itemNo = (TextView) itemView.findViewById(R.id.itemNo);
+            itemDescription = (TextView) itemView.findViewById(R.id.itemDescriptionItemMenu);
             price = (TextView) itemView.findViewById(R.id.price);
             itemPic = (ImageView) itemView.findViewById(R.id.itemPic);
             btn = (Button) itemView.findViewById(R.id.buy);
@@ -73,13 +75,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Items item = new Items();
-                    item.setItemNo(items.get(position).getItemNo());
+                    item.setName(items.get(position).getName());
+                    item.setID(items.get(position).getID());
                     item.setPrice(items.get(position).getPrice());
                     item.setItemPic(items.get(position).getItemPic());
                     item.setQuantity(DEFAULT_QTY);
 
                     databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
-                    databaseReference.child(item.getItemNo()).setValue(item);
+                    databaseReference.child(item.getID()).setValue(item);
                     Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
                 }
             });
