@@ -84,18 +84,19 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/password_diliver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100"
-                    android:textSize="25sp"
+                    android:text="1000"
+                    android:textSize="13sp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/white"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rides"
+                    android:text="@string/Password_diliver"
                     android:textAllCaps="true"
                     android:textSize="13sp"
                     android:fontFamily="sans-serif-light"
@@ -120,18 +121,19 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/re_repassword_diliver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3000"
-                    android:textSize="25sp"
+                    android:textSize="13sp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/white"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Earn"
+                    android:text="@string/Repassword_diliver"
                     android:textAllCaps="true"
                     android:textSize="13sp"
                     android:fontFamily="sans-serif-light"
@@ -244,7 +246,6 @@
                     android:background="@color/gray"/>
 
             </LinearLayout>
-
 
 
             <LinearLayout
