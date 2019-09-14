@@ -7,6 +7,8 @@ import android.view.View;
 
 public class getOrder extends AppCompatActivity {
 
+    DiliverMember diliverMember = new DiliverMember();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class getOrder extends AppCompatActivity {
     public void LoadViewAddress(View view){
 
         Intent loadViewAddress = new Intent(getOrder.this, getAddress.class);
+        loadViewAddress.putExtra("NIC", diliverMember.getNic());
         startActivity(loadViewAddress);
     }
 }
