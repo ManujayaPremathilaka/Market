@@ -99,7 +99,85 @@ public class Fruit extends AppCompatActivity {
 
             }
         });
-        //update 1st iteam
+        //update 3rd iteam
+        Up1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db =FirebaseDatabase.getInstance().getReference().child("Item");
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("3")){
+                            try{
+
+                                ITMM.setID(a1.getText().toString().trim());
+                                ITMM.setName(b1.getText().toString().trim());
+                                double pr = Double.parseDouble(c1.getText().toString().trim());
+                                ITMM.setPrice(pr);
+                                ITMM.setQTY(d1.getText().toString().trim());
+
+
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("3");
+                                db.setValue(ITMM);
+
+                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid ",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+        //update 4th iteam--------------------------------------------------------------------------------------------------------------------
+        Up2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db =FirebaseDatabase.getInstance().getReference().child("Item");
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("4")){
+                            try{
+
+                                ITMM.setID(a1.getText().toString().trim());
+                                ITMM.setName(b1.getText().toString().trim());
+                                double pr = Double.parseDouble(c1.getText().toString().trim());
+                                ITMM.setPrice(pr);
+                                ITMM.setQTY(d1.getText().toString().trim());
+
+
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
+                                db.setValue(ITMM);
+
+                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid ",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
 
         //delete 4nd iteam-----------------------------------------------------------------------------------------------------------------------
 
