@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EmployeeHome"
-    android:background="@drawable/kkkkkkkk">
+    android:background="@drawable/dashdash">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,8 +23,12 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="40dp"
+
             android:onClick="AdminHomeLog"
-            android:text="@string/Admin" />
+            android:text="@string/Admin"
+            android:background="@color/blue"
+            android:textStyle="italic|bold"
+            android:textColor="@color/blackk"/>
 
         <Button
             android:id="@+id/button7"
@@ -34,7 +38,10 @@
             android:layout_marginTop="100dp"
             android:layout_marginRight="40dp"
             android:onClick="TakeOrder"
-            android:text="@string/Worker" />
+            android:text="@string/Worker"
+            android:background="@color/blue"
+            android:textStyle="italic|bold"
+            android:textColor="@color/blackk"/>
 
         <Button
             android:id="@+id/button6"
@@ -44,6 +51,9 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="100dp"
             android:onClick="onDeliveryButtonPushed"
-            android:text="@string/Delivery" />
+            android:text="@string/Delivery"
+            android:background="@color/blue"
+            android:textStyle="italic|bold"
+            android:textColor="@color/blackk"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
