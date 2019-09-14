@@ -39,7 +39,8 @@ public class Veg extends AppCompatActivity {
         Up2 = (Button)findViewById(R.id.Update2);
         De1 = (Button)findViewById(R.id.Delete1);
         De2 = (Button)findViewById(R.id.delete2);
-        //retrivw of 1st iteam--------------------------------------------------------------------------------------
+        ITMM = new Iteam();
+        //retrivw of 1st iteam-----------------------------------------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +67,7 @@ public class Veg extends AppCompatActivity {
             }
         });
 
-        //retrivw of 2nd iteam--------------------------------------------------------------------------------------
+        //retrivw of 2nd iteam----------------------------------------------------------------------------------------------------------------------------
 
         view2.setOnClickListener(new View.OnClickListener() {
             @Override

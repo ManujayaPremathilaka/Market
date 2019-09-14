@@ -44,7 +44,7 @@ public class Fruit extends AppCompatActivity {
         De2 = (Button)findViewById(R.id.delete2);
         ITMM = new Iteam();
 
-        //retrivw of 3rd iteam--------------------------------------------------------------------------------------
+        //retrivw of 3rd iteam--------------------------------------------------------------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +71,7 @@ public class Fruit extends AppCompatActivity {
             }
         });
 
-        //retrivw of 4th iteam--------------------------------------------------------------------------------------
+        //retrivw of 4th iteam-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
