@@ -43,7 +43,7 @@ public class Fruit extends AppCompatActivity {
         De1 = (Button)findViewById(R.id.Delete1);
         De2 = (Button)findViewById(R.id.delete2);
 
-        //retrivw of 3st iteam--------------------------------------------------------------------------------------
+        //retrivw of 3rd iteam--------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +70,7 @@ public class Fruit extends AppCompatActivity {
             }
         });
 
-        //retrivw of 4nd iteam--------------------------------------------------------------------------------------
+        //retrivw of 4th iteam--------------------------------------------------------------------------------------
 
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,35 +100,8 @@ public class Fruit extends AppCompatActivity {
             }
         });
         //update 1st iteam
-        ITMM = new Iteam();
-        Up1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                db =FirebaseDatabase.getInstance().getReference().child("Item").child("3");
-                db.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("3")){
 
-                            ITMM.setQTY(d1.getText().toString().trim());
-                            double pr = Double.parseDouble(c1.getText().toString().trim());
-                            ITMM.setPrice(pr);
-
-                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("3");
-                            db.setValue("3");
-
-                            Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-        });
-        //delete 4nd iteam
+        //delete 4nd iteam-----------------------------------------------------------------------------------------------------------------------
 
         De2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,7 +127,7 @@ public class Fruit extends AppCompatActivity {
                 });
             }
         });
-        //delete 3st iteam
+        //delete 3rd iteam---------------------------------------------------------------------------------------------------------------------------
         De1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
