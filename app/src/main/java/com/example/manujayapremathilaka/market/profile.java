@@ -82,6 +82,12 @@ public class profile extends AppCompatActivity {
                         if(dataSnapshot.hasChild("1")){
                             try{
                                 diliverMember.setPhone(con_number.getText().toString().trim());
+                                diliverMember.setName(tv_name1.getText().toString().trim());
+                                diliverMember.setEmail(tv_email1.getText().toString().trim());
+                                diliverMember.setNic(nic_no.getText().toString().trim());
+                                diliverMember.setVehicalno(license_no.getText().toString().trim());
+                                diliverMember.setPassowrd(password_diliver.getText().toString().trim());
+                                diliverMember.setRepassword(re_repassword_diliver.getText().toString().trim());
 
 
                                 reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
