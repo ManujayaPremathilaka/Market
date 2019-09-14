@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
     TextView license_no,nic_no,tv_name1,tv_email1;
-    EditText con_number;
+    EditText con_number,password_diliver,re_repassword_diliver;
     Button btnShow,btnEdit,btnRem;
     DatabaseReference reff;
     DiliverMember diliverMember;
@@ -35,6 +35,8 @@ public class profile extends AppCompatActivity {
         btnShow=(Button)findViewById(R.id.btnShow);
         btnEdit=(Button)findViewById(R.id.btnEdit);
         btnRem =(Button)findViewById(R.id.btnRem);
+        password_diliver =(EditText)findViewById(R.id.password_diliver);
+        re_repassword_diliver=(EditText)findViewById(R.id.re_repassword_diliver);
         diliverMember = new DiliverMember();
 
         btnShow.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +51,17 @@ public class profile extends AppCompatActivity {
                         String nic =dataSnapshot.child("nic").getValue().toString();
                         String phone =dataSnapshot.child("phone").getValue().toString();
                         String vehicalno =dataSnapshot.child("vehicalno").getValue().toString();
+                        String passowrd = dataSnapshot.child("passowrd").getValue().toString();
+                        String repassword = dataSnapshot.child("repassword").getValue().toString();
 
                         tv_name1.setText(name);
                         tv_email1.setText(email);
                         nic_no.setText(nic);
                         con_number.setText(phone);
                         license_no.setText(vehicalno);
+                        password_diliver.setText(passowrd);
+                        re_repassword_diliver.setText(repassword);
+
                     }
 
                     @Override
@@ -75,6 +82,7 @@ public class profile extends AppCompatActivity {
                         if(dataSnapshot.hasChild("1")){
                             try{
                                 diliverMember.setPhone(con_number.getText().toString().trim());
+
 
                                 reff = FirebaseDatabase.getInstance().getReference().child("DiliverMember").child("1");
                                 reff.setValue(diliverMember);
