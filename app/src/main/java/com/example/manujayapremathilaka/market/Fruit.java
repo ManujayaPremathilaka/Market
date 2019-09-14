@@ -42,6 +42,7 @@ public class Fruit extends AppCompatActivity {
         Up2 = (Button)findViewById(R.id.Update2);
         De1 = (Button)findViewById(R.id.Delete1);
         De2 = (Button)findViewById(R.id.delete2);
+        ITMM = new Iteam();
 
         //retrivw of 3rd iteam--------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
@@ -149,11 +150,11 @@ public class Fruit extends AppCompatActivity {
                         if(dataSnapshot.hasChild("4")){
                             try{
 
-                                ITMM.setID(a1.getText().toString().trim());
-                                ITMM.setName(b1.getText().toString().trim());
-                                double pr = Double.parseDouble(c1.getText().toString().trim());
+                                ITMM.setID(a2.getText().toString().trim());
+                                ITMM.setName(b2.getText().toString().trim());
+                                double pr = Double.parseDouble(c2.getText().toString().trim());
                                 ITMM.setPrice(pr);
-                                ITMM.setQTY(d1.getText().toString().trim());
+                                ITMM.setQTY(d2.getText().toString().trim());
 
 
                                 db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
