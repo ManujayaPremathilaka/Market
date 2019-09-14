@@ -95,36 +95,85 @@ public class Veg extends AppCompatActivity {
 
             }
         });
-        //update 1st iteam
-        ITMM = new Iteam();
-      Up1.setOnClickListener(new View.OnClickListener() {
+//update 1st iteam-------------------------------------------------------------------------------------------------------------------------------
+        Up1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db =FirebaseDatabase.getInstance().getReference().child("Item").child("1");
+                db =FirebaseDatabase.getInstance().getReference().child("Item");
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("1")){
+                            try{
 
-                                ITMM.setQTY(d1.getText().toString().trim());
+                                ITMM.setID(a1.getText().toString().trim());
+                                ITMM.setName(b1.getText().toString().trim());
                                 double pr = Double.parseDouble(c1.getText().toString().trim());
                                 ITMM.setPrice(pr);
+                                ITMM.setQTY(d1.getText().toString().trim());
 
-                               db = FirebaseDatabase.getInstance().getReference().child("Item").child("1");
-                                db.setValue("1");
+
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("1");
+                                db.setValue(ITMM);
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
-
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid ",Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        @Override
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
             }
         });
-      //delete 2nd iteam
+        //update 2nd iteam------------------------------------------------------------------------------------------------------------------------------
+        Up2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db =FirebaseDatabase.getInstance().getReference().child("Item");
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild("2")){
+                            try{
+
+                                ITMM.setID(a1.getText().toString().trim());
+                                ITMM.setName(b1.getText().toString().trim());
+                                double pr = Double.parseDouble(c1.getText().toString().trim());
+                                ITMM.setPrice(pr);
+                                ITMM.setQTY(d1.getText().toString().trim());
+
+
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("2");
+                                db.setValue(ITMM);
+
+                                Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid ",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+      //delete 2nd iteam-------------------------------------------------------------------------------------------------------------------------------------------
 
         De2.setOnClickListener(new View.OnClickListener() {
             @Override
