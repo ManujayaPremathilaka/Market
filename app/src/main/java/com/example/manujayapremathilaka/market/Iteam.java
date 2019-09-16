@@ -4,7 +4,7 @@ public class Iteam {
     private String ID;
     private String Name;
     private String QTY;
-    private double price;
+    private String price;
 
     public Iteam() {
     }
@@ -33,11 +33,11 @@ public class Iteam {
         this.QTY = QTY;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

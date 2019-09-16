@@ -55,12 +55,12 @@ public class InsertItem extends AppCompatActivity {
                                    @Override
                                    public void onClick(View view) {
 
-                                       double pr = Double.parseDouble(price.getText().toString().trim());
+
 
                                        ITM.setID(IeamID.getText().toString().trim());
                                        ITM.setName(IteamName.getText().toString().trim());
                                        ITM.setQTY(QTY.getText().toString().trim());
-                                       ITM.setPrice(pr);
+                                       ITM.setPrice(price.getText().toString().trim());
 
 
                                        db.child(String.valueOf(maxid + 1)).setValue(ITM);
