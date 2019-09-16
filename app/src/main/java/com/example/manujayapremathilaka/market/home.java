@@ -28,7 +28,7 @@ public class home extends AppCompatActivity {
         info  = (TextView)findViewById(R.id.info);
         login  = (Button)findViewById(R.id.button17);
 
-        info.setText("Remaning no of attempts is 3");
+        info.setText("Remaning no of attempts are 3 !");
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class home extends AppCompatActivity {
         }
         else{
             counter --;
-            info.setText("Remaning no of attempts "+ String.valueOf(counter));
+            info.setText("Remaning no of attempts "+ String.valueOf(counter)+"!");
             if(counter == 0){
                 login.setEnabled(false);
             }
