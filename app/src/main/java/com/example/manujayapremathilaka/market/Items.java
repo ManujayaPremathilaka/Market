@@ -8,6 +8,8 @@ public class Items {
     private String qty;
     private String quantity;
     private String NIC;
+    private String orderId;
+    private String orderStatus;
 
     public Items() {
     }
@@ -17,6 +19,14 @@ public class Items {
         this.price = price;
         this.itemPic = itemPic;
     }
+
+    public String getOrderStatus() { return orderStatus; }
+
+    public void setOrderStatus(String orderStatus) { this.orderStatus = orderStatus; }
+
+    public String getOrderId() { return orderId; }
+
+    public void setOrderId(String orderId) { this.orderId = orderId; }
 
     public String getID() { return ID; }
 

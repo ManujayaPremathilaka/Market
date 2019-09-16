@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -29,14 +30,15 @@ public class Cart extends AppCompatActivity {
     CartAdapter cartAdapter;
     Button btnPlaceOrder;
     ArrayList<Items> orderList;
+    ArrayList<Items> orderCount;
     private final String CART = "Cart";
     private final String ORDER = "Order";
     private final String EMPTY_CART_MESSAGE = "CART IS EMPTY";
     private final String TOTAL = "TOTAL = ";
     String NIC;
+    int total = 0;
     ImageButton imageButton;
     TextView txtTotal, txtMarketCart;
-    int total = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,8 +97,10 @@ public class Cart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 orderList = new ArrayList<>();
+                orderCount = new ArrayList<>();
+
                 databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
-                databaseReference.addValueEventListener(new ValueEventListener() {
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot ds: dataSnapshot.getChildren()){
@@ -105,7 +109,7 @@ public class Cart extends AppCompatActivity {
                         }
 
                         for(int i = 0; i < orderList.size(); i++){
-                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(NIC).child(orderList.get(i).getID());
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).push().child(NIC).child(orderList.get(i).getID());
                             databaseReference.setValue(orderList.get(i));
                         }
 
