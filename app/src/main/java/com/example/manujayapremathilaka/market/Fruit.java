@@ -113,8 +113,7 @@ public class Fruit extends AppCompatActivity {
 
                                 ITMM.setID(a1.getText().toString().trim());
                                 ITMM.setName(b1.getText().toString().trim());
-                                double pr = Double.parseDouble(c1.getText().toString().trim());
-                                ITMM.setPrice(pr);
+                                ITMM.setPrice(c1.getText().toString().trim());
                                 ITMM.setQTY(d1.getText().toString().trim());
 
 
@@ -152,8 +151,7 @@ public class Fruit extends AppCompatActivity {
 
                                 ITMM.setID(a2.getText().toString().trim());
                                 ITMM.setName(b2.getText().toString().trim());
-                                double pr = Double.parseDouble(c2.getText().toString().trim());
-                                ITMM.setPrice(pr);
+                                ITMM.setPrice(c2.getText().toString().trim());
                                 ITMM.setQTY(d2.getText().toString().trim());
 
 
