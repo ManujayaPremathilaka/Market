@@ -108,8 +108,14 @@ public class Cart extends AppCompatActivity {
                             orderList.add(list);
                         }
 
+//                        databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).push();
+//                        for (Items itm:orderList){
+//                            databaseReference.child(NIC).child(itm.getID());
+//                            databaseReference.setValue(itm);
+//                        }
+
                         for(int i = 0; i < orderList.size(); i++){
-                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).push().child(NIC).child(orderList.get(i).getID());
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(NIC).child(orderList.get(i).getID());
                             databaseReference.setValue(orderList.get(i));
                         }
 
