@@ -33,10 +33,13 @@ public class getAddress extends AppCompatActivity {
         btn_showde = (Button) findViewById(R.id.btn_showde) ;
         diliverMember = new DiliverMember();
 
+        final String extra = getIntent().getStringExtra("NIC");
+
         btn_showde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff= FirebaseDatabase.getInstance().getReference().child("RegisteredCustomers").child("971380616V");
+//                reff= FirebaseDatabase.getInstance().getReference().child("RegisteredCustomers").child("971380616V");
+                reff= FirebaseDatabase.getInstance().getReference().child("RegisteredCustomers").child(extra);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
