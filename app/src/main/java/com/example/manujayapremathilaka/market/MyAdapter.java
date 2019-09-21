@@ -25,6 +25,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     DatabaseReference databaseReference;
     private final String CART = "Cart";
     private final String DEFAULT_QTY = "1";
+    private final String ADDED_TO_CART_MESSAGE = "Added to Cart";
 
     public MyAdapter(Context c , ArrayList<Items> p, String NIC)
     {
@@ -33,12 +34,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         this.NIC = NIC;
     }
 
+    /**
+     * Creates a view holder when there are no existing view holders
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.cardview,parent,false));
     }
 
+    /**
+     * Binds the data set with the view holder
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.itemDescription.setText("250g packet of "+ items.get(position).getName());
@@ -51,6 +63,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     }
 
+    /**
+     * Returns the size of the array list
+     * @return
+     */
     @Override
     public int getItemCount() {
         return items.size();
@@ -71,6 +87,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         }
         public void onClick(final int position)
         {
+            //item will be added to the cart table
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -83,7 +100,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
                     databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
                     databaseReference.child(item.getID()).setValue(item);
-                    Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, ADDED_TO_CART_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
             });
         }

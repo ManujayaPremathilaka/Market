@@ -35,6 +35,7 @@ public class Cart extends AppCompatActivity {
     private final String ORDER = "Order";
     private final String EMPTY_CART_MESSAGE = "CART IS EMPTY";
     private final String TOTAL = "TOTAL = ";
+    private final String ORDER_STATUS = "In Order";
     String NIC;
     int total = 0;
     ImageButton imageButton;
@@ -65,6 +66,9 @@ public class Cart extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child(CART).child(NIC);
         list = new ArrayList<Items>();
 
+        /**
+         * getting values from the database (cart table) and display
+         */
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -79,6 +83,7 @@ public class Cart extends AppCompatActivity {
                     txtTotal.setText(EMPTY_CART_MESSAGE);
                 }
                 else {
+                    //calculating the total
                     for (int i = 0; i < list.size(); i++){
                         total = total + (Integer.parseInt(list.get(i).getPrice()) * Integer.parseInt(list.get(i).getQuantity()));
                     }
@@ -92,6 +97,7 @@ public class Cart extends AppCompatActivity {
             }
         });
 
+        //remove the items from the cart and insert into Order table
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -105,14 +111,10 @@ public class Cart extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot ds: dataSnapshot.getChildren()){
                             Items list = ds.getValue(Items.class);
+                            list.setOrderStatus(ORDER_STATUS);
                             orderList.add(list);
                         }
 
-//                        databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).push();
-//                        for (Items itm:orderList){
-//                            databaseReference.child(NIC).child(itm.getID());
-//                            databaseReference.setValue(itm);
-//                        }
 
                         for(int i = 0; i < orderList.size(); i++){
                             databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(NIC).child(orderList.get(i).getID());
@@ -136,6 +138,7 @@ public class Cart extends AppCompatActivity {
             }
         });
 
+        //redirect to items menu
         txtMarketCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

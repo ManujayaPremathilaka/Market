@@ -64,7 +64,7 @@ public class CustomerRegistration extends AppCompatActivity {
         else if(TextUtils.isEmpty(txtNIC.getText().toString())){
             Toast.makeText(getApplicationContext(), "Please enter NIC number", Toast.LENGTH_SHORT).show();
         }
-        else if((TextUtils.isEmpty(txtMobileNo.getText().toString())) || (txtMobileNo.getText().toString().length() != 5)){
+        else if((TextUtils.isEmpty(txtMobileNo.getText().toString())) || (txtMobileNo.getText().toString().length() != 10)){
             if(TextUtils.isEmpty(txtMobileNo.getText().toString())){
                 Toast.makeText(getApplicationContext(), "Please enter Mobile number", Toast.LENGTH_SHORT).show();
             }

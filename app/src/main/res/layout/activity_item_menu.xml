@@ -47,12 +47,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/cart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="cart"
-        android:padding="5dp"
-        android:text="Cart" />
-
 </LinearLayout>

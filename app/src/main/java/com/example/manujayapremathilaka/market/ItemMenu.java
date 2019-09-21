@@ -34,9 +34,11 @@ public class ItemMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_menu);
 
+        //getting NIC through intent
         NIC = getIntent().getStringExtra("NIC");
         imgButton = findViewById(R.id.imgBtnCartItemMenu);
 
+        //directing to the cart
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +53,7 @@ public class ItemMenu extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child(TABLE);
         list = new ArrayList<Items>();
 
+        //getting items from the database
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -69,10 +72,10 @@ public class ItemMenu extends AppCompatActivity {
         });
     }
 
-    public void cart(View view){
-        Intent intent = new Intent(ItemMenu.this, Cart.class);
-        intent.putExtra("NIC", NIC);
-        startActivity(intent);
-
-    }
+//    public void cart(View view){
+//        Intent intent = new Intent(ItemMenu.this, Cart.class);
+//        intent.putExtra("NIC", NIC);
+//        startActivity(intent);
+//
+//    }
 }

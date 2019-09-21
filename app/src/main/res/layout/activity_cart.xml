@@ -56,13 +56,14 @@
         android:layout_marginBottom="10dp"
         android:paddingLeft="125dp"
         android:textSize="30sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnPlaceOrder"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/login_button"
         android:text="@string/order" />
 

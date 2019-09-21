@@ -39,12 +39,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         this.NIC = NIC;
     }
 
+
+    /**
+     * Creates a view holder when there are no existing view holders
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.cart_card_view,parent,false));
     }
 
+    /**
+     * Binds the data set with the view holder
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.itemNo.setText(items.get(position).getID());
@@ -55,6 +67,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         holder.onClick(position);
     }
 
+    /**
+     * Returns the size of the array list
+     * @return
+     */
     @Override
     public int getItemCount() {
         return items.size();
@@ -77,7 +93,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             btnRemove = (Button) itemView.findViewById(R.id.btnRemove);
         }
         public void onClick(final int position)
-        {
+        {   //edit the quantity in cart table
             btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -124,6 +140,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 }
             });
 
+            //remove the particular item from the cart table
             btnRemove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

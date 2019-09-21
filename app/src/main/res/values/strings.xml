@@ -95,6 +95,8 @@
     <string name="order">PLACE ORDER</string>
     <string name="itemNo">Item No</string>
     <string name="itemDescription">Item Description</string>
+    <string name="quantity">Quantity</string>
+    <string name="priceInRuppees">Price Rs.</string>
 
 
 </resources>
