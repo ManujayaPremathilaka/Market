@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register"
-    android:background="@drawable/finger">
+    android:background="@drawable/back2">
 
    <!-- <include
         android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint="@string/Password_diliver" />
 
     <TextView
@@ -196,7 +196,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint="@string/Repassword_diliver" />
 
     <TextView

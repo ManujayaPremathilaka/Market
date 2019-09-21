@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,11 +53,20 @@ public class InsertItem extends AppCompatActivity {
             }
         });
         Add.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
+                    try{
 
 
-
+                        if(TextUtils.isEmpty(IeamID.getText().toString()))
+                            Toast.makeText(getApplicationContext(),"Please Enter a ID",Toast.LENGTH_SHORT).show();
+                        else if(TextUtils.isEmpty(IteamName.getText().toString()))
+                            Toast.makeText(getApplicationContext(),"Please Enter a Name",Toast.LENGTH_SHORT).show();
+                        else if(TextUtils.isEmpty(QTY.getText().toString()))
+                            Toast.makeText(getApplicationContext(),"Please Enter Quantity",Toast.LENGTH_SHORT).show();
+                        else if(TextUtils.isEmpty(price.getText().toString()))
+                            Toast.makeText(getApplicationContext(),"Please Enter price",Toast.LENGTH_SHORT).show();
+                        else {
                                        ITM.setID(IeamID.getText().toString().trim());
                                        ITM.setName(IteamName.getText().toString().trim());
                                        ITM.setQTY(QTY.getText().toString().trim());
@@ -67,8 +77,14 @@ public class InsertItem extends AppCompatActivity {
                                        Toast.makeText(InsertItem.this, "successfull Adding", Toast.LENGTH_LONG).show();
 
 
-                                   }
-                               }
-        );
+                        }
+                    }
+                    catch (NumberFormatException e){
+                        Toast.makeText(getApplicationContext(),"Invalid Contact number",Toast.LENGTH_SHORT).show();
+                    }
+
+
+            }
+        });
     }
 }

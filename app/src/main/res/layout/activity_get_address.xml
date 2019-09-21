@@ -43,7 +43,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="manujaya" />
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -70,7 +70,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="matara" />
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_name2"
@@ -97,7 +97,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="0719502049" />
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_name3"
@@ -124,7 +124,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="2000" />
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_name4"
