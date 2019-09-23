@@ -71,11 +71,4 @@ public class ItemMenu extends AppCompatActivity {
             }
         });
     }
-
-//    public void cart(View view){
-//        Intent intent = new Intent(ItemMenu.this, Cart.class);
-//        intent.putExtra("NIC", NIC);
-//        startActivity(intent);
-//
-//    }
 }

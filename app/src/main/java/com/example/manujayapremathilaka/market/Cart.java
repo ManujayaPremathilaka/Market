@@ -38,6 +38,7 @@ public class Cart extends AppCompatActivity {
     private final String ORDER_STATUS = "In Order";
     String NIC;
     int total = 0;
+    long maxId;
     ImageButton imageButton;
     TextView txtTotal, txtMarketCart;
 
@@ -114,10 +115,23 @@ public class Cart extends AppCompatActivity {
                             list.setOrderStatus(ORDER_STATUS);
                             orderList.add(list);
                         }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER);
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        maxId = dataSnapshot.getChildrenCount();
+                        maxId++;
 
                         for(int i = 0; i < orderList.size(); i++){
-                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(NIC).child(orderList.get(i).getID());
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(Long.toString(maxId)).child(NIC).child(orderList.get(i).getID());
                             databaseReference.setValue(orderList.get(i));
                         }
 
