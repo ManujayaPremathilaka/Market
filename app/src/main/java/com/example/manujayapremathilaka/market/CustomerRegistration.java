@@ -21,7 +21,7 @@ public class CustomerRegistration extends AppCompatActivity {
     RegisteredCustomer registeredCustomer;
     DatabaseReference databaseReference;
     private String contactNo = "^[0-9]*$";
-    private String Nic= "[0-9]+[vV]";
+    private String Nic= "[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[vV]";
     private String Email = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
@@ -59,38 +59,38 @@ public class CustomerRegistration extends AppCompatActivity {
      */
      void actionsOnClick(){
              if (TextUtils.isEmpty(txtFName.getText().toString())) {
-                 Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_LONG).show();
              } else if (TextUtils.isEmpty(txtLName.getText().toString())) {
-                 Toast.makeText(getApplicationContext(), "Please enter Last name", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Please enter Last name", Toast.LENGTH_LONG).show();
              } else if ((TextUtils.isEmpty(txtNIC.getText().toString())) || (txtNIC.getText().toString().matches(Nic) == false)) {
                  if (TextUtils.isEmpty(txtNIC.getText().toString())){
-                     Toast.makeText(getApplicationContext(), "Please enter NIC number", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Please enter NIC number", Toast.LENGTH_LONG).show();
                  } else{
-                     Toast.makeText(getApplicationContext(), "Please enter Valid NIC number", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Please enter Valid NIC number", Toast.LENGTH_LONG).show();
                  }
 
              } else if ((TextUtils.isEmpty(txtMobileNo.getText().toString())) || (txtMobileNo.getText().toString().length() != 10)) {
                  if (TextUtils.isEmpty(txtMobileNo.getText().toString())) {
-                     Toast.makeText(getApplicationContext(), "Please enter Mobile number", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Please enter Mobile number", Toast.LENGTH_LONG).show();
                  } else {
-                     Toast.makeText(getApplicationContext(), "Invalid Mobile number", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Invalid Mobile number", Toast.LENGTH_LONG).show();
                  }
 
              }
              else if(!txtMobileNo.getText().toString().trim().matches(contactNo)){
-                 Toast.makeText(getApplicationContext(), "Please enter numbers for contact", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Please enter NUMBERS for contact", Toast.LENGTH_LONG).show();
              }
              else if (TextUtils.isEmpty(txtAddress.getText().toString())) {
-                 Toast.makeText(getApplicationContext(), "Please enter Address", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Please enter Address", Toast.LENGTH_LONG).show();
              } else if ((TextUtils.isEmpty(txtEmail.getText().toString())) || (txtEmail.getText().toString().trim().matches(Email) == false)) {
                  if (TextUtils.isEmpty(txtEmail.getText().toString())){
-                     Toast.makeText(getApplicationContext(), "Please enter Email", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Please enter Email", Toast.LENGTH_LONG).show();
                  } else{
-                     Toast.makeText(getApplicationContext(), "Please enter a Valid Email", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "Please enter a Valid Email", Toast.LENGTH_LONG).show();
                  }
 
              } else if (TextUtils.isEmpty(txtPassword.getText().toString()) || (!(txtPassword.getText().toString()).equalsIgnoreCase(txtRePassword.getText().toString()))) {
-                 Toast.makeText(getApplicationContext(), "Password not matching", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Password not matching", Toast.LENGTH_LONG).show();
              } else {
                  registeredCustomer.setFirstName(txtFName.getText().toString().trim());
                  registeredCustomer.setLastName(txtLName.getText().toString().trim());
