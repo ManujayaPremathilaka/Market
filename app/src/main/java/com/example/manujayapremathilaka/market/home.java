@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class home extends AppCompatActivity {
     private EditText uname,pswd;
@@ -43,12 +44,18 @@ public class home extends AppCompatActivity {
         if((username.equals("admin")) && (password.equals("admin123"))){
             Intent dash = new Intent(home.this,dashboard.class);
                 startActivity(dash);
+            Toast.makeText(getApplicationContext(),"Login Successfully",Toast.LENGTH_SHORT).show();
+
         }
         else{
             counter --;
             info.setText("Remaning no of attempts "+ String.valueOf(counter)+"!");
+            Toast.makeText(getApplicationContext(),"Remaning"+String.valueOf(counter)+"!",Toast.LENGTH_SHORT).show();
+
             if(counter == 0){
                 login.setEnabled(false);
+                Toast.makeText(getApplicationContext(),"No more Remanings",Toast.LENGTH_SHORT).show();
+
             }
         }
     }

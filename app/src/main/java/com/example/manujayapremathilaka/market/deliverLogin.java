@@ -53,6 +53,8 @@ public class deliverLogin extends AppCompatActivity {
                                 if (diliverMember.getPassowrd().equals(password.getText().toString())) {
                                     Intent login = new Intent(deliverLogin.this, getOrder.class);
                                     startActivity(login);
+                                    Toast.makeText(getApplicationContext(),"Login Successfully",Toast.LENGTH_SHORT).show();
+
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                                     Intent login = new Intent(deliverLogin.this, deliverLogin.class);

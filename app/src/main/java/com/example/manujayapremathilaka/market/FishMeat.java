@@ -15,18 +15,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Fruit extends AppCompatActivity {
+public class FishMeat extends AppCompatActivity {
     EditText a1,b1,c1,d1,a2,b2,c2,d2;
     Button view1,view2,Up1,Up2,De1,De2;
     DatabaseReference db;
     Iteam ITMM;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fruit);
-
+        setContentView(R.layout.activity_fish_meat);
 
         a1 = (EditText) findViewById(R.id.id);
         b1 = (EditText)findViewById(R.id.name);
@@ -43,12 +41,11 @@ public class Fruit extends AppCompatActivity {
         De1 = (Button)findViewById(R.id.Delete1);
         De2 = (Button)findViewById(R.id.delete2);
         ITMM = new Iteam();
-
-        //retrivw of 4th iteam--------------------------------------------------------------------------------------------------------------------------------------------
+        //retrivw of 7th iteam-----------------------------------------------------------------------------------------------------------------------
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("7");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -71,12 +68,12 @@ public class Fruit extends AppCompatActivity {
             }
         });
 
-        //retrivw of 5th iteam-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //retrivw of 8th iteam----------------------------------------------------------------------------------------------------------------------------
 
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference().child("Item").child("5");
+                db = FirebaseDatabase.getInstance().getReference().child("Item").child("8");
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,7 +97,7 @@ public class Fruit extends AppCompatActivity {
 
             }
         });
-        //update 4th iteam
+//update 7th iteam-------------------------------------------------------------------------------------------------------------------------------
         Up1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,16 +105,16 @@ public class Fruit extends AppCompatActivity {
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("3")){
+                        if(dataSnapshot.hasChild("7")){
                             try{
 
                                 ITMM.setID(a1.getText().toString().trim());
                                 ITMM.setName(b1.getText().toString().trim());
-                                ITMM.setPrice(c1.getText().toString().trim());
+                                ITMM.setPrice( c1.getText().toString().trim());
                                 ITMM.setQTY(d1.getText().toString().trim());
 
 
-                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("7");
                                 db.setValue(ITMM);
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
@@ -138,7 +135,7 @@ public class Fruit extends AppCompatActivity {
                 });
             }
         });
-        //update 5th iteam--------------------------------------------------------------------------------------------------------------------
+        //update 8th iteam------------------------------------------------------------------------------------------------------------------------------
         Up2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -146,16 +143,16 @@ public class Fruit extends AppCompatActivity {
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("5")){
+                        if(dataSnapshot.hasChild("8")){
                             try{
 
-                                ITMM.setID(a2.getText().toString().trim());
-                                ITMM.setName(b2.getText().toString().trim());
-                                ITMM.setPrice(c2.getText().toString().trim());
-                                ITMM.setQTY(d2.getText().toString().trim());
+                                ITMM.setID(a1.getText().toString().trim());
+                                ITMM.setName(b1.getText().toString().trim());
+                                ITMM.setPrice( c1.getText().toString().trim());
+                                ITMM.setQTY(d1.getText().toString().trim());
 
 
-                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("5");
+                                db = FirebaseDatabase.getInstance().getReference().child("Item").child("8");
                                 db.setValue(ITMM);
 
                                 Toast.makeText(getApplicationContext(),"Updated Successfully",Toast.LENGTH_SHORT).show();
@@ -176,9 +173,7 @@ public class Fruit extends AppCompatActivity {
                 });
             }
         });
-
-
-        //delete 5th iteam-----------------------------------------------------------------------------------------------------------------------
+        //delete 8th iteam-------------------------------------------------------------------------------------------------------------------------------------------
 
         De2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,8 +182,8 @@ public class Fruit extends AppCompatActivity {
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("5")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("5");
+                        if(dataSnapshot.hasChild("8")){
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("8");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
@@ -204,7 +199,7 @@ public class Fruit extends AppCompatActivity {
                 });
             }
         });
-        //delete 4th iteam---------------------------------------------------------------------------------------------------------------------------
+        //delete 7th iteam
         De1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -212,8 +207,8 @@ public class Fruit extends AppCompatActivity {
                 db.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("4")){
-                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("4");
+                        if(dataSnapshot.hasChild("7")){
+                            db = FirebaseDatabase.getInstance().getReference().child("Item").child("7");
                             db.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
@@ -232,12 +227,9 @@ public class Fruit extends AppCompatActivity {
 
 
 
-
-
     }
-
-    public void InsertIeamm(View view) {
-        Intent newiteam = new Intent(Fruit.this, InsertItem.class);
+    public void InsertIeam(View view){
+        Intent newiteam = new Intent(FishMeat.this, InsertItem.class);
         startActivity(newiteam);
     }
 }
