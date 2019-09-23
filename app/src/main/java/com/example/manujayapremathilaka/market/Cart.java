@@ -36,8 +36,9 @@ public class Cart extends AppCompatActivity {
     private final String EMPTY_CART_MESSAGE = "CART IS EMPTY";
     private final String TOTAL = "TOTAL = ";
     private final String ORDER_STATUS = "In Order";
-    String NIC;
-    int total = 0;
+    private String NIC;
+    private ArrayList<String> Ids;
+    double total = 0;
     long maxId;
     ImageButton imageButton;
     TextView txtTotal, txtMarketCart;
@@ -52,6 +53,7 @@ public class Cart extends AppCompatActivity {
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
         txtTotal = findViewById(R.id.txtTotal);
         txtMarketCart = findViewById(R.id.txtMarketCart);
+        Ids = new ArrayList<>();
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +88,7 @@ public class Cart extends AppCompatActivity {
                 else {
                     //calculating the total
                     for (int i = 0; i < list.size(); i++){
-                        total = total + (Integer.parseInt(list.get(i).getPrice()) * Integer.parseInt(list.get(i).getQuantity()));
+                        total = total + (Double.parseDouble(list.get(i).getPrice()) * Double.parseDouble(list.get(i).getQuantity()));
                     }
                     txtTotal.setText(TOTAL + total);
                 }
@@ -127,8 +129,19 @@ public class Cart extends AppCompatActivity {
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        maxId = dataSnapshot.getChildrenCount();
+
+                        for (DataSnapshot ds: dataSnapshot.getChildren()){
+                            Ids.add(ds.getKey());
+                        }
+
+                        maxId = Ids.size();
                         maxId++;
+
+                        for (int i = 0; i < Ids.size(); i++){
+                            if (Ids.get(i).equalsIgnoreCase(Long.toString(maxId))){
+                                maxId++;
+                            }
+                        }
 
                         for(int i = 0; i < orderList.size(); i++){
                             databaseReference = FirebaseDatabase.getInstance().getReference().child(ORDER).child(Long.toString(maxId)).child(NIC).child(orderList.get(i).getID());
