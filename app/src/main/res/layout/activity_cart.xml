@@ -45,7 +45,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cartRecycler"
         android:layout_width="match_parent"
-        android:layout_height="616dp">
+        android:layout_height="560dp">
 
     </android.support.v7.widget.RecyclerView>
 

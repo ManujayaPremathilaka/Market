@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +23,7 @@ public class ItemMenu extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     ArrayList<Items> list;
-    MyAdapter adapter;
+    ItemMenuAdapter adapter;
     String NIC;
     ImageButton imgButton;
     private final String TABLE = "Item";
@@ -61,7 +60,7 @@ public class ItemMenu extends AppCompatActivity {
                     Items item = dataSnapshot1.getValue(Items.class);
                     list.add(item);
                 }
-                adapter = new MyAdapter(ItemMenu.this, list, NIC);
+                adapter = new ItemMenuAdapter(ItemMenu.this, list, NIC);
                 recyclerView.setAdapter(adapter);
             }
 

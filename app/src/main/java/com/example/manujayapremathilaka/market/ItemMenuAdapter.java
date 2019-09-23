@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+public class ItemMenuAdapter extends RecyclerView.Adapter<ItemMenuAdapter.MyViewHolder>{
 
     Context context;
     ArrayList<Items> items;
@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     private final String DEFAULT_QTY = "1";
     private final String ADDED_TO_CART_MESSAGE = "Added to Cart";
 
-    public MyAdapter(Context c , ArrayList<Items> p, String NIC)
+    public ItemMenuAdapter(Context c , ArrayList<Items> p, String NIC)
     {
         context = c;
         items = p;
