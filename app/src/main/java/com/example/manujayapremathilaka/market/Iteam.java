@@ -5,6 +5,15 @@ public class Iteam {
     private String Name;
     private String QTY;
     private String price;
+    private String itemPic;
+
+    public String getItemPic() {
+        return itemPic;
+    }
+
+    public void setItemPic(String itemPic) {
+        this.itemPic = itemPic;
+    }
 
     public Iteam() {
     }

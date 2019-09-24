@@ -23,7 +23,7 @@
                 android:layout_width="336dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingLeft="140dp"
+                android:paddingLeft="180dp"
                 android:paddingTop="8dp"
                 android:text="@string/Market"
                 android:textColor="@color/white"

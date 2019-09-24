@@ -79,10 +79,12 @@
             android:id="@+id/buy"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/rounded_corner_button"
             android:drawableStart="@drawable/shoppingcartbutton"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:text="@string/AddToCart"
             android:visibility="invisible" />
     </LinearLayout>

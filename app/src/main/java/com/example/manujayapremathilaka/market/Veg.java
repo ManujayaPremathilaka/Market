@@ -19,6 +19,7 @@ public class Veg extends AppCompatActivity {
     Button view1,view2,Up1,Up2,De1,De2;
     DatabaseReference db;
     Iteam ITMM;
+    String itemPic;
 
 
     @Override
@@ -145,10 +146,10 @@ public class Veg extends AppCompatActivity {
                         if(dataSnapshot.hasChild("2")){
                             try{
 
-                                ITMM.setID(a1.getText().toString().trim());
-                                ITMM.setName(b1.getText().toString().trim());
-                                ITMM.setPrice( c1.getText().toString().trim());
-                                ITMM.setQTY(d1.getText().toString().trim());
+                                ITMM.setID(a2.getText().toString().trim());
+                                ITMM.setName(b2.getText().toString().trim());
+                                ITMM.setPrice(c2.getText().toString().trim());
+                                ITMM.setQTY(d2.getText().toString().trim());
 
 
                                 db = FirebaseDatabase.getInstance().getReference().child("Item").child("2");
@@ -172,7 +173,8 @@ public class Veg extends AppCompatActivity {
                 });
             }
         });
-      //delete 2nd iteam-------------------------------------------------------------------------------------------------------------------------------------------
+
+        //delete 2nd iteam-------------------------------------------------------------------------------------------------------------------------------------------
 
         De2.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -146,10 +146,10 @@ public class FishMeat extends AppCompatActivity {
                         if(dataSnapshot.hasChild("8")){
                             try{
 
-                                ITMM.setID(a1.getText().toString().trim());
-                                ITMM.setName(b1.getText().toString().trim());
-                                ITMM.setPrice( c1.getText().toString().trim());
-                                ITMM.setQTY(d1.getText().toString().trim());
+                                ITMM.setID(a2.getText().toString().trim());
+                                ITMM.setName(b2.getText().toString().trim());
+                                ITMM.setPrice(c2.getText().toString().trim());
+                                ITMM.setQTY(d2.getText().toString().trim());
 
 
                                 db = FirebaseDatabase.getInstance().getReference().child("Item").child("8");
@@ -173,6 +173,7 @@ public class FishMeat extends AppCompatActivity {
                 });
             }
         });
+
         //delete 8th iteam-------------------------------------------------------------------------------------------------------------------------------------------
 
         De2.setOnClickListener(new View.OnClickListener() {
